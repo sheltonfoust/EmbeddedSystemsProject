@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>EmbeddedSystemsProject</name>
+	<name>HW1_EmbSys_SF</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -28,7 +28,7 @@
 		<link>
 			<name>Board.html</name>
 			<type>1</type>
-			<locationURI>source/ti/boards/MSP_EXP432E401Y/Board.html</locationURI>
+			<locationURI>COM_TI_SIMPLELINK_MSP432E4_SDK_INSTALL_DIR/source/ti/boards/MSP_EXP432E401Y/Board.html</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>

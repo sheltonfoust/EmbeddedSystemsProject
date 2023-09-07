@@ -33,7 +33,6 @@
 /*
  *  ======== uartecho.c ========
  */
-//Test Comment
 #include <stdint.h>
 #include <stddef.h>
 

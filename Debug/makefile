@@ -129,21 +129,21 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXE_OUTPUTS += \
-uartecho_MSP_EXP432E401Y_nortos_ccs.out \
+EmbeddedSystemsProject.out \
 
 EXE_OUTPUTS__QUOTED += \
-"uartecho_MSP_EXP432E401Y_nortos_ccs.out" \
+"EmbeddedSystemsProject.out" \
 
 
 # All Target
 all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
-	@$(MAKE) --no-print-directory -Onone "uartecho_MSP_EXP432E401Y_nortos_ccs.out"
+	@$(MAKE) --no-print-directory -Onone "EmbeddedSystemsProject.out"
 
 # Tool invocations
-uartecho_MSP_EXP432E401Y_nortos_ccs.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
+EmbeddedSystemsProject.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: Arm Linker'
-	"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on -z -m"uartecho_MSP_EXP432E401Y_nortos_ccs.map" -i"C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" -i"C:/ti/simplelink_msp432e4_sdk_4_20_00_12/kernel/nortos" -i"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" --diag_suppress=10063 --diag_wrap=off --display_error_number --warn_sections --xml_link_info="uartecho_MSP_EXP432E401Y_nortos_ccs_linkInfo.xml" --entry_point=resetISR --rom_model -o "uartecho_MSP_EXP432E401Y_nortos_ccs.out" $(ORDERED_OBJS)
+	"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on -z -m"EmbeddedSystemsProject.map" -i"C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" -i"C:/ti/simplelink_msp432e4_sdk_4_20_00_12/kernel/nortos" -i"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" --diag_suppress=10063 --diag_wrap=off --display_error_number --warn_sections --xml_link_info="EmbeddedSystemsProject_linkInfo.xml" --entry_point=resetISR --rom_model -o "EmbeddedSystemsProject.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
