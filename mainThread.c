@@ -179,12 +179,60 @@ void aboutPrint(UART_Handle uart)
 
 void helpPrint(UART_Handle uart, char* input)
 {
+    char afterCommand[MSG_LEN] = "";
+    char output[MSG_LEN];
+
+    if (strlen("-help") == strlen(input))
+    {
+        helpBase(uart);
+        return;
+    }
+    int lenAfterCommand = strlen(input) - strlen("-help");
+    strncpy(afterCommand, input + strlen("-help"), lenAfterCommand);
+    afterCommand[lenAfterCommand] = 0;
+    if (afterCommand[0] == ' ')
+    {
+        if (strlen(afterCommand) == 1))
+        {
+            helpBase(uart);
+            return;
+        }
+        char tempString[MSG_LEN] = "";
+        strncpy(tempString, afterCommand, strlen(afterCommand));
+        strncpy(afterCommand, tempString + 1, strlen(tempString) - 1);
+        afterCommand[strlen(tempString) - 1] = 0;
+    }
+    if      (StringStartsWith(afterCommand, "-about") || StringStartsWith(afterCommand, "about"))
+    {
+
+    }
+    else if (StringStartsWith(afterCommand, "-help") || StringStartsWith(afterCommand, "help"))
+    {
+
+    }
+    else if (StringStartsWith(afterCommand, "-about") || StringStartsWith(afterCommand, "about"))
+    {
+
+    }
+    else
+    {
+        sprintf(output, "Operation \"%s\" not valid.\n\r\n\r", afterCommand);
+        UART_write(uart, &output, strlen(output));
+    }
+}
+
+void helpBase(UART_Handle uart)
+{
     char output[MSG_LEN];
     sprintf(output, "\t%s\n\r", "-about");
     UART_write(uart, &output, strlen(output));
-    sprintf(output, "\t%s\n\r\n\r", "-help");
+    sprintf(output, "\t%s\n\r\n\r", "-help [command]");
     UART_write(uart, &output, strlen(output));
+    sprintf(output, "\t%s\n\r", "-print [string]");
+    UART_write(uart, &output, strlen(output));
+    return;
 }
+
 
 void printPrint(UART_Handle uart, char* input)
 {
