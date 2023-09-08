@@ -114,12 +114,12 @@ void *mainThread(void *arg0)
                 aboutPrint(uart);
             else if (stringStartsWith(inputLine, "-help"))
                 helpPrint(uart, inputLine);
-            else if (stringStartsWith(inputLine, '-memr'))
+            else if (stringStartsWith(inputLine, "-memr"))
             {
 
             }
             else if (stringStartsWith(inputLine, "-print"))
-                printPrint(uart, inputLine);
+                printPrint(uart, inputLine, strlen(inputLine));
             else // Invalid operation
             {
                 char output[MSG_LEN];
@@ -186,10 +186,14 @@ void helpPrint(UART_Handle uart, char* input)
     UART_write(uart, &output, strlen(output));
 }
 
-void printPrint(UART_Handle uart, char* input)
+void printPrint(UART_Handle uart, char* inputPtr, int inputLen)
 {
     char afterCommand[MSG_LEN];
     char output[MSG_LEN];
+    char input[MSG_LEN];
+    sprintf(input, "%s", inputPtr);
+    input[inputLen] = 0;
+
     output[0] = 0;
     if (strlen("-print") == strlen(input))
     {
