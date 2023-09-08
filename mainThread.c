@@ -192,7 +192,7 @@ void helpPrint(UART_Handle uart, char* input)
     afterCommand[lenAfterCommand] = 0;
     if (afterCommand[0] == ' ')
     {
-        if (strlen(afterCommand) == 1))
+        if (strlen(afterCommand) == 1)
         {
             helpBase(uart);
             return;
@@ -202,18 +202,34 @@ void helpPrint(UART_Handle uart, char* input)
         strncpy(afterCommand, tempString + 1, strlen(tempString) - 1);
         afterCommand[strlen(tempString) - 1] = 0;
     }
-    if      (StringStartsWith(afterCommand, "-about") || StringStartsWith(afterCommand, "about"))
+    if      (stringStartsWith(afterCommand, "-about") || stringStartsWith(afterCommand, "about"))
     {
+        sprintf(output, "Displays time, date, author, version, and homework number.\n\r");
+        UART_write(uart, &output, strlen(output));
+    }
+    else if (stringStartsWith(afterCommand, "-help") || stringStartsWith(afterCommand, "help"))
+    {
+        sprintf(output, "Lists commands and displays informations about commands.\n\r");
+        UART_write(uart, &output, strlen(output));
+    }
+    else if (stringStartsWith(afterCommand, "-memr") || stringStartsWith(afterCommand, "memr"))
+    {
+            sprintf(output, "Displays memory contents of four locations by the address.\n\r");
+            UART_write(uart, &output, strlen(output));
+            sprintf(output, "0x00000000 to 0x000FFFFF: Flash\n\r");
+            UART_write(uart, &output, strlen(output));
+            sprintf(output, "0x20000000 to 0x2003FFF: SRAM\n\r");
+            UART_write(uart, &output, strlen(output));
+            sprintf(output, "0x4000000 to 0x44054FFF: Peripherals\n\r");
+            UART_write(uart, &output, strlen(output));
 
     }
-    else if (StringStartsWith(afterCommand, "-help") || StringStartsWith(afterCommand, "help"))
+    else if (stringStartsWith(afterCommand, "-print") || stringStartsWith(afterCommand, "print"))
     {
-
+        sprintf(output, "Prints out string after the command.\n\r");
+        UART_write(uart, &output, strlen(output));
     }
-    else if (StringStartsWith(afterCommand, "-about") || StringStartsWith(afterCommand, "about"))
-    {
 
-    }
     else
     {
         sprintf(output, "Operation \"%s\" not valid.\n\r\n\r", afterCommand);
@@ -226,9 +242,11 @@ void helpBase(UART_Handle uart)
     char output[MSG_LEN];
     sprintf(output, "\t%s\n\r", "-about");
     UART_write(uart, &output, strlen(output));
-    sprintf(output, "\t%s\n\r\n\r", "-help [command]");
+    sprintf(output, "\t%s\n\r", "-help [command]");
     UART_write(uart, &output, strlen(output));
-    sprintf(output, "\t%s\n\r", "-print [string]");
+    sprintf(output, "\t%s\n\r", "-memr [address]");
+    UART_write(uart, &output, strlen(output));
+    sprintf(output, "\t%s\n\r\n\r", "-print [string]");
     UART_write(uart, &output, strlen(output));
     return;
 }
