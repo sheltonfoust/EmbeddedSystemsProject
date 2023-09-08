@@ -47,7 +47,7 @@
  *  ======== mainThread ========
  */
 
-#define VERSION "2.0"
+#define VERSION "2.2"
 #define ASSIGNMENT 2
 #define AUTHOR "Shelton Foust"
 #define MSG_LEN 50
@@ -186,15 +186,10 @@ void helpPrint(UART_Handle uart, char* input)
     UART_write(uart, &output, strlen(output));
 }
 
-void printPrint(UART_Handle uart, char* inputPtr, int inputLen)
+void printPrint(UART_Handle uart, char* input)
 {
     char afterCommand[MSG_LEN];
     char output[MSG_LEN];
-    char input[MSG_LEN];
-    sprintf(input, "%s", inputPtr);
-    input[inputLen] = 0;
-
-    output[0] = 0;
     if (strlen("-print") == strlen(input))
     {
         sprintf(output, "\n\r");
