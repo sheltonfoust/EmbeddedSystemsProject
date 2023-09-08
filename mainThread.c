@@ -47,7 +47,7 @@
  *  ======== mainThread ========
  */
 
-#define VERSION "2.0"
+#define VERSION "2.1"
 #define ASSIGNMENT 2
 #define AUTHOR "Shelton Foust"
 #define MSG_LEN 50
@@ -114,6 +114,8 @@ void *mainThread(void *arg0)
                 aboutPrint(uart);
             else if (stringStartsWith(inputLine, "-help"))
                 helpPrint(uart, inputLine);
+            else if (stringStartsWith(inputLine, "-print"))
+                printPrint(uart, inputLine, strlen(inputLine));
             else // Invalid operation
             {
                 char output[MSG_LEN];
@@ -180,5 +182,38 @@ void helpPrint(UART_Handle uart, char* input)
     UART_write(uart, &output, strlen(output));
 }
 
-
+void printPrint(UART_Handle uart, char* inputPtr, int inputLength)
+{
+    char afterCommand[MSG_LEN];
+    char output[MSG_LEN];
+    char input[MSG_LEN];
+    sprintf(input, "%s", inputPtr);
+    input[inputLength] = 0;
+    output[0] = 0;
+    if (strlen("-print") == strlen(input))
+    {
+        sprintf(output, "\n\r");
+        UART_write(uart, &output, strlen(output));
+        return;
+    }
+    int lenAfterCommand = strlen(input) - strlen("-print");
+    strncpy(afterCommand, input + strlen("-print"), lenAfterCommand);
+    afterCommand[lenAfterCommand] = 0;
+    if (afterCommand[0] == ' ')
+    {
+        if (strlen(afterCommand) == 1)
+        {
+            sprintf(output, "\n\r");
+            UART_write(uart, &output, strlen(output));
+            return;
+        }
+        char tempString[MSG_LEN];
+        strncpy(tempString, afterCommand, strlen(afterCommand));
+        strncpy(afterCommand, tempString + 1, strlen(tempString) - 1);
+        afterCommand[strlen(tempString) - 1] = 0;
+    }
+   sprintf(output, "%s\n\r", afterCommand);
+   UART_write(uart, &output, strlen(output));
+   return;
+}
 
