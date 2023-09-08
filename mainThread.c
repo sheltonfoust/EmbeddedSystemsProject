@@ -200,7 +200,7 @@ void memoryReadPrint(UART_Handle uart, char* input)
         int lenAfterCommand = strlen(input) - strlen("-memr");
         strncpy(afterCommand, input + strlen("-memr"), lenAfterCommand);
         afterCommand[lenAfterCommand] = 0;
-        char noSpacesStr[lenAfterCommand] = "";
+        char noSpacesStr[MSG_LEN] = "";
         int noSpacesLen = 0;
         int i;
         for (i = 0; i < lenAfterCommand; i++ )
