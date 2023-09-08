@@ -47,8 +47,8 @@
  *  ======== mainThread ========
  */
 
-#define VERSION "1.0"
-#define ASSIGNMENT 1
+#define VERSION "2.0"
+#define ASSIGNMENT 2
 #define AUTHOR "Shelton Foust"
 #define MSG_LEN 50
 
@@ -89,8 +89,7 @@ void *mainThread(void *arg0)
     char        inputChar;
     char        inputLine[MSG_LEN + 1];
     inputLine[0] = 0;
-    char        aboutStr[] = "-about";
-    char        helpStr[] = "-help";
+
     int         lineLength = 0;
     while (1)
     {
@@ -104,34 +103,18 @@ void *mainThread(void *arg0)
             lineLength = 0;
             inputLine[lineLength] = 0;
         }
-        else if (inputChar == '\n' || inputChar == '\r')
+        else if (inputChar == '\n' || inputChar == '\r') // Enter pressed
         {
             char output[MSG_LEN];
             sprintf(output, "\n\r");
             UART_write(uart, &output, strlen(output));
 
-            if (stringStartsWith(inputLine, aboutStr))
-            {
 
-                sprintf(output, "Author: %s\n\r", AUTHOR);
-                    UART_write(uart, &output, strlen(output));
-                    sprintf(output, "Version: %s\n\r", VERSION);
-                    UART_write(uart, &output, strlen(output));
-                    sprintf(output, "Assignment: %d\n\r", ASSIGNMENT);
-                    UART_write(uart, &output, strlen(output));
-                    sprintf(output, "Compile Timestamp: %s %s\n\r\n\r", __TIME__, __DATE__);
-                    UART_write(uart, &output, strlen(output));
-
-            }
-            else if (stringStartsWith(inputLine, helpStr))
-            {
-                sprintf(output, "\t%s\n\r", aboutStr);
-                UART_write(uart, &output, strlen(output));
-                sprintf(output, "\t%s\n\r\n\r", helpStr);
-                UART_write(uart, &output, strlen(output));
-
-            }
-            else
+            if      (stringStartsWith(inputLine, "-about"))
+                aboutPrint(uart);
+            else if (stringStartsWith(inputLine, "-help"))
+                helpPrint(uart, inputLine);
+            else // Invalid operation
             {
                 char output[MSG_LEN];
                 sprintf(output, "Operation \"%s\" not valid.\n\r\n\r", inputLine);
@@ -141,7 +124,7 @@ void *mainThread(void *arg0)
             inputLine[lineLength] = 0;
 
         }
-        else if (inputChar == '\b' || inputChar == 127)
+        else if (inputChar == '\b' || inputChar == 127) // Backspace or Delete
         {
             if(lineLength > 0)
             {
@@ -149,7 +132,7 @@ void *mainThread(void *arg0)
                 lineLength--;
             }
         }
-        else
+        else // Add character to line
         {
             inputLine[lineLength] = inputChar;
             inputLine[lineLength + 1] = 0;
@@ -159,16 +142,43 @@ void *mainThread(void *arg0)
     }
 }
 
-int stringStartsWith(char *str1, char *str2)
+
+int stringStartsWith(char *input, char *commandName)
 {
-    if(strlen(str1) == strlen(str2))
+    if(strlen(input) >= strlen(commandName))
     {
-        char substring[strlen(str2) + 1];
-        strncpy(substring, str1, strlen(str2));
-        substring[strlen(str2)] = 0;
-       return (!strcmp(substring, str2));
+        char substring[strlen(commandName) + 1];
+        strncpy(substring, input, strlen(commandName));
+        substring[strlen(commandName)] = 0;
+
+        return (!strcmp(substring, commandName));
     }
     return 0;
 }
+
+
+void aboutPrint(UART_Handle uart)
+{
+    char output[MSG_LEN];
+    sprintf(output, "Author: %s\n\r", AUTHOR);
+    UART_write(uart, &output, strlen(output));
+    sprintf(output, "Version: %s\n\r", VERSION);
+    UART_write(uart, &output, strlen(output));
+    sprintf(output, "Assignment: %d\n\r", ASSIGNMENT);
+    UART_write(uart, &output, strlen(output));
+    sprintf(output, "Compile Timestamp: %s %s\n\r\n\r", __TIME__, __DATE__);
+    UART_write(uart, &output, strlen(output));
+}
+
+
+void helpPrint(UART_Handle uart, char* input)
+{
+    char output[MSG_LEN];
+    sprintf(output, "\t%s\n\r", "-about");
+    UART_write(uart, &output, strlen(output));
+    sprintf(output, "\t%s\n\r\n\r", "-help");
+    UART_write(uart, &output, strlen(output));
+}
+
 
 

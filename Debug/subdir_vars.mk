@@ -12,8 +12,8 @@ SYSCFG_SRCS += \
 ../uartecho.syscfg 
 
 C_SRCS += \
-../main_nortos.c \
-../uartecho.c \
+../main.c \
+../mainThread.c \
 ./syscfg/ti_drivers_config.c 
 
 GEN_FILES += \
@@ -23,13 +23,13 @@ GEN_MISC_DIRS += \
 ./syscfg/ 
 
 C_DEPS += \
-./main_nortos.d \
-./uartecho.d \
+./main.d \
+./mainThread.d \
 ./syscfg/ti_drivers_config.d 
 
 OBJS += \
-./main_nortos.obj \
-./uartecho.obj \
+./main.obj \
+./mainThread.obj \
 ./syscfg/ti_drivers_config.obj 
 
 GEN_MISC_FILES += \
@@ -41,8 +41,8 @@ GEN_MISC_DIRS__QUOTED += \
 "syscfg\" 
 
 OBJS__QUOTED += \
-"main_nortos.obj" \
-"uartecho.obj" \
+"main.obj" \
+"mainThread.obj" \
 "syscfg\ti_drivers_config.obj" 
 
 GEN_MISC_FILES__QUOTED += \
@@ -51,16 +51,16 @@ GEN_MISC_FILES__QUOTED += \
 "syscfg\syscfg_c.rov.xs" 
 
 C_DEPS__QUOTED += \
-"main_nortos.d" \
-"uartecho.d" \
+"main.d" \
+"mainThread.d" \
 "syscfg\ti_drivers_config.d" 
 
 GEN_FILES__QUOTED += \
 "syscfg\ti_drivers_config.c" 
 
 C_SRCS__QUOTED += \
-"../main_nortos.c" \
-"../uartecho.c" \
+"../main.c" \
+"../mainThread.c" \
 "./syscfg/ti_drivers_config.c" 
 
 SYSCFG_SRCS__QUOTED += \

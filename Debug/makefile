@@ -10,8 +10,8 @@ GEN_OPTS__FLAG :=
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
-"./main_nortos.obj" \
-"./uartecho.obj" \
+"./main.obj" \
+"./mainThread.obj" \
 "./syscfg/ti_drivers_config.obj" \
 "../MSP_EXP432E401Y_NoRTOS.cmd" \
 $(GEN_CMDS__FLAG) \
@@ -150,8 +150,8 @@ EmbeddedSystemsProject.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 # Other Targets
 clean:
 	-$(RM) $(GEN_MISC_FILES__QUOTED)$(GEN_FILES__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "main_nortos.obj" "uartecho.obj" "syscfg\ti_drivers_config.obj" 
-	-$(RM) "main_nortos.d" "uartecho.d" "syscfg\ti_drivers_config.d" 
+	-$(RM) "main.obj" "mainThread.obj" "syscfg\ti_drivers_config.obj" 
+	-$(RM) "main.d" "mainThread.d" "syscfg\ti_drivers_config.d" 
 	-$(RMDIR) $(GEN_MISC_DIRS__QUOTED)
 	-@echo 'Finished clean'
 	-@echo ' '

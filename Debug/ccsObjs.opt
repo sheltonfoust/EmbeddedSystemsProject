@@ -1,5 +1,5 @@
-"./main_nortos.obj"
-"./uartecho.obj"
+"./main.obj"
+"./mainThread.obj"
 "./syscfg/ti_drivers_config.obj"
 "../MSP_EXP432E401Y_NoRTOS.cmd"
 -l"ti/display/lib/display.aem4f"
