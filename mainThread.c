@@ -47,7 +47,7 @@
  *  ======== mainThread ========
  */
 
-#define VERSION "2.2"
+#define VERSION "2.3"
 #define ASSIGNMENT 2
 #define AUTHOR "Shelton Foust"
 #define MSG_LEN 50
@@ -116,7 +116,7 @@ void *mainThread(void *arg0)
                 helpPrint(uart, inputLine);
             else if (stringStartsWith(inputLine, "-memr"))
             {
-
+                memoryReadPrint(uart, inputLine);
             }
             else if (stringStartsWith(inputLine, "-print"))
                 printPrint(uart, inputLine, strlen(inputLine));
@@ -185,6 +185,74 @@ void helpPrint(UART_Handle uart, char* input)
     sprintf(output, "\t%s\n\r\n\r", "-help");
     UART_write(uart, &output, strlen(output));
 }
+
+void memoryReadPrint(UART_Handle uart, char* input)
+{
+    long int address;
+    char afterCommand[MSG_LEN];
+    char output[MSG_LEN];
+    if (strlen("-memr") == strlen(input))
+    {
+        address = 0;
+    }
+    else
+    {
+        int lenAfterCommand = strlen(input) - strlen("-memr");
+        strncpy(afterCommand, input + strlen("-memr"), lenAfterCommand);
+        afterCommand[lenAfterCommand] = 0;
+        char noSpacesStr[lenAfterCommand] = "";
+        int noSpacesLen = 0;
+        int i;
+        for (i = 0; i < lenAfterCommand; i++ )
+        {
+            char character = afterCommand[i];
+            if (character != ' ')
+            {
+                noSpacesStr[noSpacesLen] = character;
+                noSpacesLen++;
+            }
+        }
+        noSpacesStr[noSpacesLen] = 0;
+
+        if (strlen("-memr") == strlen(noSpacesStr))
+        {
+            address = 0;
+        }
+        else
+        {
+            char* endPtr;
+            address = strtol(noSpacesStr, &endPtr, 16);
+        }
+        int value;
+        sprintf(output, "\n\r");
+        UART_write(uart, &output, strlen(output));
+        sprintf(output, "%#010x %#010x %#010x %#010x\n\r", address + 0xC, address + 0x8, address + 0x4, address);
+        UART_write(uart, &output, strlen(output));
+
+        value = *(int *) (address + 0xC);
+        sprintf(output, "%#010x ", value);
+        UART_write(uart, &output, strlen(output));
+
+        value = *(int *) (address + 0x8);
+        sprintf(output, "%#010x ", value);
+        UART_write(uart, &output, strlen(output));
+
+        value = *(int *) (address + 0x4);
+        sprintf(output, "%#010x ", value);
+        UART_write(uart, &output, strlen(output));
+
+        value = *(int *) (address + 0x0);
+        sprintf(output, "%#010x ", value);
+        UART_write(uart, &output, strlen(output));
+        return;
+    }
+}
+
+
+
+
+
+
 
 void printPrint(UART_Handle uart, char* input)
 {
