@@ -1,0 +1,1312 @@
+
+**** Build of configuration Debug for project tirtos_builds_MSP_EXP432E401Y_release_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+Building file: "../release.cfg"
+Invoking: XDCtools
+"C:/ti/ccs1240/xdctools_3_62_01_16_core/xs" --xdcpath="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source;C:/ti/simplelink_msp432e4_sdk_4_20_00_12/kernel/tirtos/packages;" xdc.tools.configuro -o configPkg -t ti.targets.arm.elf.M4F -p ti.platforms.msp432:MSP432E401Y -r release -c "C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS" "../release.cfg"
+making package.mak (because of package.bld) ...
+generating interfaces for package configPkg (because package/package.xdc.inc is older than package.xdc) ...
+configuring release.xem4f from package/cfg/release_pem4f.cfg ...
+generating custom ti.sysbios library makefile ... 
+Starting build of library sources ...
+making C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/src/sysbios/sysbios.aem4f ...
+clem4f C:/ti/simplelink_msp432e4_sdk_4_20_00_12/kernel/tirtos/packages/ti/sysbios/BIOS.c ...
+asmem4f C:/ti/simplelink_msp432e4_sdk_4_20_00_12/kernel/tirtos/packages/ti/sysbios/family/arm/m3/Hwi_asm.sv7M ...
+asmem4f C:/ti/simplelink_msp432e4_sdk_4_20_00_12/kernel/tirtos/packages/ti/sysbios/family/arm/m3/Hwi_asm_switch.sv7M ...
+asmem4f C:/ti/simplelink_msp432e4_sdk_4_20_00_12/kernel/tirtos/packages/ti/sysbios/family/arm/m3/IntrinsicsSupport_asm.sv7M ...
+asmem4f C:/ti/simplelink_msp432e4_sdk_4_20_00_12/kernel/tirtos/packages/ti/sysbios/family/arm/m3/TaskSupport_asm.sv7M ...
+arem4f BIOS.obj m3_Hwi_asm.obj m3_Hwi_asm_switch.obj m3_IntrinsicsSupport_asm.obj m3_TaskSupport_asm.obj ...
+Build of libraries done.
+clem4f package/cfg/release_pem4f.c ...
+Finished building: "../release.cfg"
+ 
+        1 file(s) copied.
+making ../src/sysbios/sysbios.aem4f ...
+gmake[1]: Nothing to be done for 'all'.
+gmake[1]: Nothing to be done for 'configPkg/linker.cmd'.
+making ../src/sysbios/sysbios.aem4f ...
+gmake[2]: Nothing to be done for 'all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+Building file: "../uartecho.syscfg"
+Invoking: SysConfig
+"C:/ti/sysconfig_1.5.0/sysconfig_cli.bat" -s "C:/ti/simplelink_msp432e4_sdk_4_20_00_12/.metadata/product.json" -o "syscfg" "C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/uartecho.syscfg" --compiler ccs
+Running script...
+Validating...
+Generating Code...
+    '/ti/drivers' -> '/ti/devices/driverlib'
+Writing C:\Users\sfous\EmbeddedSystemsProject\uartecho_MSP_EXP432E401Y_tirtos_ccs\Debug\syscfg\ti_drivers_config.c...
+Writing C:\Users\sfous\EmbeddedSystemsProject\uartecho_MSP_EXP432E401Y_tirtos_ccs\Debug\syscfg\ti_drivers_config.h...
+Writing C:\Users\sfous\EmbeddedSystemsProject\uartecho_MSP_EXP432E401Y_tirtos_ccs\Debug\syscfg\ti_utils_build_linker.cmd.exp...
+Writing C:\Users\sfous\EmbeddedSystemsProject\uartecho_MSP_EXP432E401Y_tirtos_ccs\Debug\syscfg\syscfg_c.rov.xs...
+Finished building: "../uartecho.syscfg"
+ 
+Building file: "../uartecho.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="uartecho.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "../uartecho.c"
+Finished building: "../uartecho.c"
+ 
+Building file: "../main_tirtos.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="main_tirtos.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "../main_tirtos.c"
+Finished building: "../main_tirtos.c"
+ 
+Building file: "syscfg/ti_drivers_config.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="syscfg/ti_drivers_config.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --obj_directory="syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "syscfg/ti_drivers_config.c"
+Finished building: "syscfg/ti_drivers_config.c"
+ 
+Building target: "uartecho_MSP_EXP432E401Y_tirtos_ccs.out"
+Invoking: Arm Linker
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on -z -m"uartecho_MSP_EXP432E401Y_tirtos_ccs.map" -i"C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" -i"C:/ti/simplelink_msp432e4_sdk_4_20_00_12/kernel/tirtos/packages" -i"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" --diag_wrap=off --display_error_number --warn_sections --xml_link_info="uartecho_MSP_EXP432E401Y_tirtos_ccs_linkInfo.xml" --rom_model -o "uartecho_MSP_EXP432E401Y_tirtos_ccs.out" "./main_tirtos.obj" "./uartecho.obj" "./syscfg/ti_drivers_config.obj" "../MSP_EXP432E401Y_TIRTOS.cmd" -l"ti/display/lib/display.aem4f" -l"ti/grlib/lib/ccs/m4f/grlib.a" -l"third_party/spiffs/lib/ccs/m4f/spiffs.a" -l"ti/drivers/lib/drivers_msp432e4.aem4f" -l"third_party/fatfs/lib/ccs/m4f/fatfs.a" -l"ti/dpl/lib/dpl_msp432e4.aem4f" -l"C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/linker.cmd"  -l"ti/devices/msp432e4/driverlib/lib/ccs/m4f/msp432e4_driverlib.a" -llibc.a 
+<Linking>
+Finished building target: "uartecho_MSP_EXP432E401Y_tirtos_ccs.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project tirtos_builds_MSP_EXP432E401Y_release_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+making ../src/sysbios/sysbios.aem4f ...
+gmake[1]: Nothing to be done for 'all'.
+gmake[1]: Nothing to be done for 'configPkg/linker.cmd'.
+making ../src/sysbios/sysbios.aem4f ...
+gmake[2]: Nothing to be done for 'all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+gmake[1]: 'uartecho_MSP_EXP432E401Y_tirtos_ccs.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project tirtos_builds_MSP_EXP432E401Y_release_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+making ../src/sysbios/sysbios.aem4f ...
+gmake[1]: Nothing to be done for 'all'.
+gmake[1]: Nothing to be done for 'configPkg/linker.cmd'.
+making ../src/sysbios/sysbios.aem4f ...
+gmake[2]: Nothing to be done for 'all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+gmake[1]: 'uartecho_MSP_EXP432E401Y_tirtos_ccs.out' is up to date.
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 clean -O 
+ 
+DEL /F  "syscfg\ti_drivers_config.h" "syscfg\ti_utils_build_linker.cmd.exp" "syscfg\syscfg_c.rov.xs"  "syscfg\ti_drivers_config.c"  "uartecho_MSP_EXP432E401Y_tirtos_ccs.out" 
+DEL /F "main_tirtos.obj" "uartecho.obj" "syscfg\ti_drivers_config.obj" 
+DEL /F "main_tirtos.d" "uartecho.d" "syscfg\ti_drivers_config.d" 
+RMDIR /S/Q  "syscfg\" 
+Finished clean
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project tirtos_builds_MSP_EXP432E401Y_release_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+making ../src/sysbios/sysbios.aem4f ...
+gmake[1]: Nothing to be done for 'all'.
+gmake[1]: Nothing to be done for 'configPkg/linker.cmd'.
+making ../src/sysbios/sysbios.aem4f ...
+gmake[2]: Nothing to be done for 'all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+Building file: "../uartecho.syscfg"
+Invoking: SysConfig
+"C:/ti/sysconfig_1.5.0/sysconfig_cli.bat" -s "C:/ti/simplelink_msp432e4_sdk_4_20_00_12/.metadata/product.json" -o "syscfg" "C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/uartecho.syscfg" --compiler ccs
+Running script...
+Validating...
+Generating Code...
+    '/ti/drivers' -> '/ti/devices/driverlib'
+Writing C:\Users\sfous\EmbeddedSystemsProject\uartecho_MSP_EXP432E401Y_tirtos_ccs\Debug\syscfg\ti_drivers_config.c...
+Writing C:\Users\sfous\EmbeddedSystemsProject\uartecho_MSP_EXP432E401Y_tirtos_ccs\Debug\syscfg\ti_drivers_config.h...
+Writing C:\Users\sfous\EmbeddedSystemsProject\uartecho_MSP_EXP432E401Y_tirtos_ccs\Debug\syscfg\ti_utils_build_linker.cmd.exp...
+Writing C:\Users\sfous\EmbeddedSystemsProject\uartecho_MSP_EXP432E401Y_tirtos_ccs\Debug\syscfg\syscfg_c.rov.xs...
+Finished building: "../uartecho.syscfg"
+ 
+Building file: "../mainThread.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="mainThread.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "../mainThread.c"
+Finished building: "../mainThread.c"
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="main.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "../main.c"
+Finished building: "../main.c"
+ 
+Building file: "syscfg/ti_drivers_config.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="syscfg/ti_drivers_config.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --obj_directory="syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "syscfg/ti_drivers_config.c"
+Finished building: "syscfg/ti_drivers_config.c"
+ 
+Building file: "../library.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="library.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "../library.c"
+Finished building: "../library.c"
+ 
+Building target: "uartecho_MSP_EXP432E401Y_tirtos_ccs.out"
+Invoking: Arm Linker
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on -z -m"uartecho_MSP_EXP432E401Y_tirtos_ccs.map" -i"C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" -i"C:/ti/simplelink_msp432e4_sdk_4_20_00_12/kernel/tirtos/packages" -i"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" --diag_wrap=off --display_error_number --warn_sections --xml_link_info="uartecho_MSP_EXP432E401Y_tirtos_ccs_linkInfo.xml" --rom_model -o "uartecho_MSP_EXP432E401Y_tirtos_ccs.out" "./library.obj" "./main.obj" "./mainThread.obj" "./syscfg/ti_drivers_config.obj" "../MSP_EXP432E401Y_TIRTOS.cmd" -l"ti/display/lib/display.aem4f" -l"ti/grlib/lib/ccs/m4f/grlib.a" -l"third_party/spiffs/lib/ccs/m4f/spiffs.a" -l"ti/drivers/lib/drivers_msp432e4.aem4f" -l"third_party/fatfs/lib/ccs/m4f/fatfs.a" -l"ti/dpl/lib/dpl_msp432e4.aem4f" -l"C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/linker.cmd"  -l"ti/devices/msp432e4/driverlib/lib/ccs/m4f/msp432e4_driverlib.a" -llibc.a 
+<Linking>
+warning #10457-D: Use of variable-length arrays is not thread-safe.
+Finished building target: "uartecho_MSP_EXP432E401Y_tirtos_ccs.out"
+ 
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 clean -O 
+ 
+DEL /F  "syscfg\ti_drivers_config.h" "syscfg\ti_utils_build_linker.cmd.exp" "syscfg\syscfg_c.rov.xs"  "syscfg\ti_drivers_config.c"  "uartecho_MSP_EXP432E401Y_tirtos_ccs.out" 
+DEL /F "library.obj" "main.obj" "mainThread.obj" "syscfg\ti_drivers_config.obj" 
+DEL /F "library.d" "main.d" "mainThread.d" "syscfg\ti_drivers_config.d" 
+RMDIR /S/Q  "syscfg\" 
+Finished clean
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project tirtos_builds_MSP_EXP432E401Y_release_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+making ../src/sysbios/sysbios.aem4f ...
+gmake[1]: Nothing to be done for 'all'.
+gmake[1]: Nothing to be done for 'configPkg/linker.cmd'.
+making ../src/sysbios/sysbios.aem4f ...
+gmake[2]: Nothing to be done for 'all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+Building file: "../uartecho.syscfg"
+Invoking: SysConfig
+"C:/ti/sysconfig_1.5.0/sysconfig_cli.bat" -s "C:/ti/simplelink_msp432e4_sdk_4_20_00_12/.metadata/product.json" -o "syscfg" "C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/uartecho.syscfg" --compiler ccs
+Running script...
+Validating...
+Generating Code...
+    '/ti/drivers' -> '/ti/devices/driverlib'
+Writing C:\Users\sfous\EmbeddedSystemsProject\uartecho_MSP_EXP432E401Y_tirtos_ccs\Debug\syscfg\ti_drivers_config.c...
+Writing C:\Users\sfous\EmbeddedSystemsProject\uartecho_MSP_EXP432E401Y_tirtos_ccs\Debug\syscfg\ti_drivers_config.h...
+Writing C:\Users\sfous\EmbeddedSystemsProject\uartecho_MSP_EXP432E401Y_tirtos_ccs\Debug\syscfg\ti_utils_build_linker.cmd.exp...
+Writing C:\Users\sfous\EmbeddedSystemsProject\uartecho_MSP_EXP432E401Y_tirtos_ccs\Debug\syscfg\syscfg_c.rov.xs...
+Finished building: "../uartecho.syscfg"
+ 
+Building file: "../mainThread.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="mainThread.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "../mainThread.c"
+Finished building: "../mainThread.c"
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="main.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "../main.c"
+Finished building: "../main.c"
+ 
+Building file: "syscfg/ti_drivers_config.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="syscfg/ti_drivers_config.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --obj_directory="syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "syscfg/ti_drivers_config.c"
+Finished building: "syscfg/ti_drivers_config.c"
+ 
+Building file: "../library.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="library.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "../library.c"
+Finished building: "../library.c"
+ 
+Building target: "uartecho_MSP_EXP432E401Y_tirtos_ccs.out"
+Invoking: Arm Linker
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on -z -m"uartecho_MSP_EXP432E401Y_tirtos_ccs.map" -i"C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" -i"C:/ti/simplelink_msp432e4_sdk_4_20_00_12/kernel/tirtos/packages" -i"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" --diag_wrap=off --display_error_number --warn_sections --xml_link_info="uartecho_MSP_EXP432E401Y_tirtos_ccs_linkInfo.xml" --rom_model -o "uartecho_MSP_EXP432E401Y_tirtos_ccs.out" "./library.obj" "./main.obj" "./mainThread.obj" "./syscfg/ti_drivers_config.obj" "../MSP_EXP432E401Y_TIRTOS.cmd" -l"ti/display/lib/display.aem4f" -l"ti/grlib/lib/ccs/m4f/grlib.a" -l"third_party/spiffs/lib/ccs/m4f/spiffs.a" -l"ti/drivers/lib/drivers_msp432e4.aem4f" -l"third_party/fatfs/lib/ccs/m4f/fatfs.a" -l"ti/dpl/lib/dpl_msp432e4.aem4f" -l"C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/linker.cmd"  -l"ti/devices/msp432e4/driverlib/lib/ccs/m4f/msp432e4_driverlib.a" -llibc.a 
+<Linking>
+warning #10457-D: Use of variable-length arrays is not thread-safe.
+Finished building target: "uartecho_MSP_EXP432E401Y_tirtos_ccs.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project tirtos_builds_MSP_EXP432E401Y_release_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+making ../src/sysbios/sysbios.aem4f ...
+gmake[1]: Nothing to be done for 'all'.
+gmake[1]: Nothing to be done for 'configPkg/linker.cmd'.
+making ../src/sysbios/sysbios.aem4f ...
+gmake[2]: Nothing to be done for 'all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+gmake[1]: 'uartecho_MSP_EXP432E401Y_tirtos_ccs.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project tirtos_builds_MSP_EXP432E401Y_release_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+making ../src/sysbios/sysbios.aem4f ...
+gmake[1]: Nothing to be done for 'all'.
+gmake[1]: Nothing to be done for 'configPkg/linker.cmd'.
+making ../src/sysbios/sysbios.aem4f ...
+gmake[2]: Nothing to be done for 'all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+gmake[1]: 'uartecho_MSP_EXP432E401Y_tirtos_ccs.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project tirtos_builds_MSP_EXP432E401Y_release_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+making ../src/sysbios/sysbios.aem4f ...
+gmake[1]: Nothing to be done for 'all'.
+gmake[1]: Nothing to be done for 'configPkg/linker.cmd'.
+making ../src/sysbios/sysbios.aem4f ...
+gmake[2]: Nothing to be done for 'all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+gmake[1]: 'uartecho_MSP_EXP432E401Y_tirtos_ccs.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project tirtos_builds_MSP_EXP432E401Y_release_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+making ../src/sysbios/sysbios.aem4f ...
+gmake[1]: Nothing to be done for 'all'.
+gmake[1]: Nothing to be done for 'configPkg/linker.cmd'.
+making ../src/sysbios/sysbios.aem4f ...
+gmake[2]: Nothing to be done for 'all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+gmake[1]: 'uartecho_MSP_EXP432E401Y_tirtos_ccs.out' is up to date.
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 clean -O 
+ 
+DEL /F  "syscfg\ti_drivers_config.h" "syscfg\ti_utils_build_linker.cmd.exp" "syscfg\syscfg_c.rov.xs"  "syscfg\ti_drivers_config.c"  "uartecho_MSP_EXP432E401Y_tirtos_ccs.out" 
+DEL /F "library.obj" "main.obj" "mainThread.obj" "syscfg\ti_drivers_config.obj" 
+DEL /F "library.d" "main.d" "mainThread.d" "syscfg\ti_drivers_config.d" 
+RMDIR /S/Q  "syscfg\" 
+Finished clean
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project tirtos_builds_MSP_EXP432E401Y_release_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+making ../src/sysbios/sysbios.aem4f ...
+gmake[1]: Nothing to be done for 'all'.
+gmake[1]: Nothing to be done for 'configPkg/linker.cmd'.
+making ../src/sysbios/sysbios.aem4f ...
+gmake[2]: Nothing to be done for 'all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+Building file: "../uartecho.syscfg"
+Invoking: SysConfig
+"C:/ti/sysconfig_1.5.0/sysconfig_cli.bat" -s "C:/ti/simplelink_msp432e4_sdk_4_20_00_12/.metadata/product.json" -o "syscfg" "C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/uartecho.syscfg" --compiler ccs
+Running script...
+Validating...
+Generating Code...
+    '/ti/drivers' -> '/ti/devices/driverlib'
+Writing C:\Users\sfous\EmbeddedSystemsProject\uartecho_MSP_EXP432E401Y_tirtos_ccs\Debug\syscfg\ti_drivers_config.c...
+Writing C:\Users\sfous\EmbeddedSystemsProject\uartecho_MSP_EXP432E401Y_tirtos_ccs\Debug\syscfg\ti_drivers_config.h...
+Writing C:\Users\sfous\EmbeddedSystemsProject\uartecho_MSP_EXP432E401Y_tirtos_ccs\Debug\syscfg\ti_utils_build_linker.cmd.exp...
+Writing C:\Users\sfous\EmbeddedSystemsProject\uartecho_MSP_EXP432E401Y_tirtos_ccs\Debug\syscfg\syscfg_c.rov.xs...
+Finished building: "../uartecho.syscfg"
+ 
+Building file: "../mainThread.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="mainThread.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "../mainThread.c"
+Finished building: "../mainThread.c"
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="main.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "../main.c"
+Finished building: "../main.c"
+ 
+Building file: "syscfg/ti_drivers_config.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="syscfg/ti_drivers_config.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --obj_directory="syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "syscfg/ti_drivers_config.c"
+Finished building: "syscfg/ti_drivers_config.c"
+ 
+Building file: "../library.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="library.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "../library.c"
+Finished building: "../library.c"
+ 
+Building target: "uartecho_MSP_EXP432E401Y_tirtos_ccs.out"
+Invoking: Arm Linker
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on -z -m"uartecho_MSP_EXP432E401Y_tirtos_ccs.map" -i"C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" -i"C:/ti/simplelink_msp432e4_sdk_4_20_00_12/kernel/tirtos/packages" -i"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" --diag_wrap=off --display_error_number --warn_sections --xml_link_info="uartecho_MSP_EXP432E401Y_tirtos_ccs_linkInfo.xml" --rom_model -o "uartecho_MSP_EXP432E401Y_tirtos_ccs.out" "./library.obj" "./main.obj" "./mainThread.obj" "./syscfg/ti_drivers_config.obj" "../MSP_EXP432E401Y_TIRTOS.cmd" -l"ti/display/lib/display.aem4f" -l"ti/grlib/lib/ccs/m4f/grlib.a" -l"third_party/spiffs/lib/ccs/m4f/spiffs.a" -l"ti/drivers/lib/drivers_msp432e4.aem4f" -l"third_party/fatfs/lib/ccs/m4f/fatfs.a" -l"ti/dpl/lib/dpl_msp432e4.aem4f" -l"C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/linker.cmd"  -l"ti/devices/msp432e4/driverlib/lib/ccs/m4f/msp432e4_driverlib.a" -llibc.a 
+<Linking>
+warning #10457-D: Use of variable-length arrays is not thread-safe.
+Finished building target: "uartecho_MSP_EXP432E401Y_tirtos_ccs.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project tirtos_builds_MSP_EXP432E401Y_release_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+making ../src/sysbios/sysbios.aem4f ...
+gmake[1]: Nothing to be done for 'all'.
+gmake[1]: Nothing to be done for 'configPkg/linker.cmd'.
+making ../src/sysbios/sysbios.aem4f ...
+gmake[2]: Nothing to be done for 'all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+gmake[1]: 'uartecho_MSP_EXP432E401Y_tirtos_ccs.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project tirtos_builds_MSP_EXP432E401Y_release_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+making ../src/sysbios/sysbios.aem4f ...
+gmake[1]: Nothing to be done for 'all'.
+gmake[1]: Nothing to be done for 'configPkg/linker.cmd'.
+making ../src/sysbios/sysbios.aem4f ...
+gmake[2]: Nothing to be done for 'all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+gmake[1]: 'uartecho_MSP_EXP432E401Y_tirtos_ccs.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project tirtos_builds_MSP_EXP432E401Y_release_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+making ../src/sysbios/sysbios.aem4f ...
+gmake[1]: Nothing to be done for 'all'.
+gmake[1]: Nothing to be done for 'configPkg/linker.cmd'.
+making ../src/sysbios/sysbios.aem4f ...
+gmake[2]: Nothing to be done for 'all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+gmake[1]: 'uartecho_MSP_EXP432E401Y_tirtos_ccs.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project tirtos_builds_MSP_EXP432E401Y_release_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+making ../src/sysbios/sysbios.aem4f ...
+gmake[1]: Nothing to be done for 'all'.
+gmake[1]: Nothing to be done for 'configPkg/linker.cmd'.
+making ../src/sysbios/sysbios.aem4f ...
+gmake[2]: Nothing to be done for 'all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+gmake[1]: 'uartecho_MSP_EXP432E401Y_tirtos_ccs.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project tirtos_builds_MSP_EXP432E401Y_release_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+making ../src/sysbios/sysbios.aem4f ...
+gmake[1]: Nothing to be done for 'all'.
+gmake[1]: Nothing to be done for 'configPkg/linker.cmd'.
+making ../src/sysbios/sysbios.aem4f ...
+gmake[2]: Nothing to be done for 'all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+gmake[1]: 'uartecho_MSP_EXP432E401Y_tirtos_ccs.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project tirtos_builds_MSP_EXP432E401Y_release_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+making ../src/sysbios/sysbios.aem4f ...
+gmake[1]: Nothing to be done for 'all'.
+gmake[1]: Nothing to be done for 'configPkg/linker.cmd'.
+making ../src/sysbios/sysbios.aem4f ...
+gmake[2]: Nothing to be done for 'all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+gmake[1]: 'uartecho_MSP_EXP432E401Y_tirtos_ccs.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project tirtos_builds_MSP_EXP432E401Y_release_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+making ../src/sysbios/sysbios.aem4f ...
+gmake[1]: Nothing to be done for 'all'.
+gmake[1]: Nothing to be done for 'configPkg/linker.cmd'.
+making ../src/sysbios/sysbios.aem4f ...
+gmake[2]: Nothing to be done for 'all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+Building file: "../library.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="library.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "../library.c"
+"../library.c", line 11: warning #179-D: variable "num" was declared but never referenced
+Finished building: "../library.c"
+ 
+Building target: "uartecho_MSP_EXP432E401Y_tirtos_ccs.out"
+Invoking: Arm Linker
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on -z -m"uartecho_MSP_EXP432E401Y_tirtos_ccs.map" -i"C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" -i"C:/ti/simplelink_msp432e4_sdk_4_20_00_12/kernel/tirtos/packages" -i"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" --diag_wrap=off --display_error_number --warn_sections --xml_link_info="uartecho_MSP_EXP432E401Y_tirtos_ccs_linkInfo.xml" --rom_model -o "uartecho_MSP_EXP432E401Y_tirtos_ccs.out" "./library.obj" "./main.obj" "./mainThread.obj" "./syscfg/ti_drivers_config.obj" "../MSP_EXP432E401Y_TIRTOS.cmd" -l"ti/display/lib/display.aem4f" -l"ti/grlib/lib/ccs/m4f/grlib.a" -l"third_party/spiffs/lib/ccs/m4f/spiffs.a" -l"ti/drivers/lib/drivers_msp432e4.aem4f" -l"third_party/fatfs/lib/ccs/m4f/fatfs.a" -l"ti/dpl/lib/dpl_msp432e4.aem4f" -l"C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/linker.cmd"  -l"ti/devices/msp432e4/driverlib/lib/ccs/m4f/msp432e4_driverlib.a" -llibc.a 
+<Linking>
+warning #10457-D: Use of variable-length arrays is not thread-safe.
+Finished building target: "uartecho_MSP_EXP432E401Y_tirtos_ccs.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project tirtos_builds_MSP_EXP432E401Y_release_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+making ../src/sysbios/sysbios.aem4f ...
+gmake[1]: Nothing to be done for 'all'.
+gmake[1]: Nothing to be done for 'configPkg/linker.cmd'.
+making ../src/sysbios/sysbios.aem4f ...
+gmake[2]: Nothing to be done for 'all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+Building file: "../library.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="library.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "../library.c"
+Finished building: "../library.c"
+ 
+Building target: "uartecho_MSP_EXP432E401Y_tirtos_ccs.out"
+Invoking: Arm Linker
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on -z -m"uartecho_MSP_EXP432E401Y_tirtos_ccs.map" -i"C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" -i"C:/ti/simplelink_msp432e4_sdk_4_20_00_12/kernel/tirtos/packages" -i"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" --diag_wrap=off --display_error_number --warn_sections --xml_link_info="uartecho_MSP_EXP432E401Y_tirtos_ccs_linkInfo.xml" --rom_model -o "uartecho_MSP_EXP432E401Y_tirtos_ccs.out" "./library.obj" "./main.obj" "./mainThread.obj" "./syscfg/ti_drivers_config.obj" "../MSP_EXP432E401Y_TIRTOS.cmd" -l"ti/display/lib/display.aem4f" -l"ti/grlib/lib/ccs/m4f/grlib.a" -l"third_party/spiffs/lib/ccs/m4f/spiffs.a" -l"ti/drivers/lib/drivers_msp432e4.aem4f" -l"third_party/fatfs/lib/ccs/m4f/fatfs.a" -l"ti/dpl/lib/dpl_msp432e4.aem4f" -l"C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/linker.cmd"  -l"ti/devices/msp432e4/driverlib/lib/ccs/m4f/msp432e4_driverlib.a" -llibc.a 
+<Linking>
+warning #10457-D: Use of variable-length arrays is not thread-safe.
+Finished building target: "uartecho_MSP_EXP432E401Y_tirtos_ccs.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project tirtos_builds_MSP_EXP432E401Y_release_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+making ../src/sysbios/sysbios.aem4f ...
+gmake[1]: Nothing to be done for 'all'.
+gmake[1]: Nothing to be done for 'configPkg/linker.cmd'.
+making ../src/sysbios/sysbios.aem4f ...
+gmake[2]: Nothing to be done for 'all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+Building file: "../library.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="library.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "../library.c"
+Finished building: "../library.c"
+ 
+Building target: "uartecho_MSP_EXP432E401Y_tirtos_ccs.out"
+Invoking: Arm Linker
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on -z -m"uartecho_MSP_EXP432E401Y_tirtos_ccs.map" -i"C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" -i"C:/ti/simplelink_msp432e4_sdk_4_20_00_12/kernel/tirtos/packages" -i"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" --diag_wrap=off --display_error_number --warn_sections --xml_link_info="uartecho_MSP_EXP432E401Y_tirtos_ccs_linkInfo.xml" --rom_model -o "uartecho_MSP_EXP432E401Y_tirtos_ccs.out" "./library.obj" "./main.obj" "./mainThread.obj" "./syscfg/ti_drivers_config.obj" "../MSP_EXP432E401Y_TIRTOS.cmd" -l"ti/display/lib/display.aem4f" -l"ti/grlib/lib/ccs/m4f/grlib.a" -l"third_party/spiffs/lib/ccs/m4f/spiffs.a" -l"ti/drivers/lib/drivers_msp432e4.aem4f" -l"third_party/fatfs/lib/ccs/m4f/fatfs.a" -l"ti/dpl/lib/dpl_msp432e4.aem4f" -l"C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/linker.cmd"  -l"ti/devices/msp432e4/driverlib/lib/ccs/m4f/msp432e4_driverlib.a" -llibc.a 
+<Linking>
+warning #10457-D: Use of variable-length arrays is not thread-safe.
+Finished building target: "uartecho_MSP_EXP432E401Y_tirtos_ccs.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project tirtos_builds_MSP_EXP432E401Y_release_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+making ../src/sysbios/sysbios.aem4f ...
+gmake[1]: Nothing to be done for 'all'.
+gmake[1]: Nothing to be done for 'configPkg/linker.cmd'.
+making ../src/sysbios/sysbios.aem4f ...
+gmake[2]: Nothing to be done for 'all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+Building file: "../library.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="library.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "../library.c"
+Finished building: "../library.c"
+ 
+Building target: "uartecho_MSP_EXP432E401Y_tirtos_ccs.out"
+Invoking: Arm Linker
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on -z -m"uartecho_MSP_EXP432E401Y_tirtos_ccs.map" -i"C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" -i"C:/ti/simplelink_msp432e4_sdk_4_20_00_12/kernel/tirtos/packages" -i"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" --diag_wrap=off --display_error_number --warn_sections --xml_link_info="uartecho_MSP_EXP432E401Y_tirtos_ccs_linkInfo.xml" --rom_model -o "uartecho_MSP_EXP432E401Y_tirtos_ccs.out" "./library.obj" "./main.obj" "./mainThread.obj" "./syscfg/ti_drivers_config.obj" "../MSP_EXP432E401Y_TIRTOS.cmd" -l"ti/display/lib/display.aem4f" -l"ti/grlib/lib/ccs/m4f/grlib.a" -l"third_party/spiffs/lib/ccs/m4f/spiffs.a" -l"ti/drivers/lib/drivers_msp432e4.aem4f" -l"third_party/fatfs/lib/ccs/m4f/fatfs.a" -l"ti/dpl/lib/dpl_msp432e4.aem4f" -l"C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/linker.cmd"  -l"ti/devices/msp432e4/driverlib/lib/ccs/m4f/msp432e4_driverlib.a" -llibc.a 
+<Linking>
+warning #10457-D: Use of variable-length arrays is not thread-safe.
+Finished building target: "uartecho_MSP_EXP432E401Y_tirtos_ccs.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project tirtos_builds_MSP_EXP432E401Y_release_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+making ../src/sysbios/sysbios.aem4f ...
+gmake[1]: Nothing to be done for 'all'.
+gmake[1]: Nothing to be done for 'configPkg/linker.cmd'.
+making ../src/sysbios/sysbios.aem4f ...
+gmake[2]: Nothing to be done for 'all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+gmake[1]: 'uartecho_MSP_EXP432E401Y_tirtos_ccs.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project tirtos_builds_MSP_EXP432E401Y_release_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+making ../src/sysbios/sysbios.aem4f ...
+gmake[1]: Nothing to be done for 'all'.
+gmake[1]: Nothing to be done for 'configPkg/linker.cmd'.
+making ../src/sysbios/sysbios.aem4f ...
+gmake[2]: Nothing to be done for 'all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+Building file: "../library.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="library.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "../library.c"
+Finished building: "../library.c"
+ 
+Building target: "uartecho_MSP_EXP432E401Y_tirtos_ccs.out"
+Invoking: Arm Linker
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on -z -m"uartecho_MSP_EXP432E401Y_tirtos_ccs.map" -i"C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" -i"C:/ti/simplelink_msp432e4_sdk_4_20_00_12/kernel/tirtos/packages" -i"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" --diag_wrap=off --display_error_number --warn_sections --xml_link_info="uartecho_MSP_EXP432E401Y_tirtos_ccs_linkInfo.xml" --rom_model -o "uartecho_MSP_EXP432E401Y_tirtos_ccs.out" "./library.obj" "./main.obj" "./mainThread.obj" "./syscfg/ti_drivers_config.obj" "../MSP_EXP432E401Y_TIRTOS.cmd" -l"ti/display/lib/display.aem4f" -l"ti/grlib/lib/ccs/m4f/grlib.a" -l"third_party/spiffs/lib/ccs/m4f/spiffs.a" -l"ti/drivers/lib/drivers_msp432e4.aem4f" -l"third_party/fatfs/lib/ccs/m4f/fatfs.a" -l"ti/dpl/lib/dpl_msp432e4.aem4f" -l"C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/linker.cmd"  -l"ti/devices/msp432e4/driverlib/lib/ccs/m4f/msp432e4_driverlib.a" -llibc.a 
+<Linking>
+warning #10457-D: Use of variable-length arrays is not thread-safe.
+Finished building target: "uartecho_MSP_EXP432E401Y_tirtos_ccs.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project tirtos_builds_MSP_EXP432E401Y_release_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+making ../src/sysbios/sysbios.aem4f ...
+gmake[1]: Nothing to be done for 'all'.
+gmake[1]: Nothing to be done for 'configPkg/linker.cmd'.
+making ../src/sysbios/sysbios.aem4f ...
+gmake[2]: Nothing to be done for 'all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+gmake[1]: 'uartecho_MSP_EXP432E401Y_tirtos_ccs.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project tirtos_builds_MSP_EXP432E401Y_release_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+making ../src/sysbios/sysbios.aem4f ...
+gmake[1]: Nothing to be done for 'all'.
+gmake[1]: Nothing to be done for 'configPkg/linker.cmd'.
+making ../src/sysbios/sysbios.aem4f ...
+gmake[2]: Nothing to be done for 'all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+Building file: "../library.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="library.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "../library.c"
+Finished building: "../library.c"
+ 
+Building target: "uartecho_MSP_EXP432E401Y_tirtos_ccs.out"
+Invoking: Arm Linker
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on -z -m"uartecho_MSP_EXP432E401Y_tirtos_ccs.map" -i"C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" -i"C:/ti/simplelink_msp432e4_sdk_4_20_00_12/kernel/tirtos/packages" -i"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" --diag_wrap=off --display_error_number --warn_sections --xml_link_info="uartecho_MSP_EXP432E401Y_tirtos_ccs_linkInfo.xml" --rom_model -o "uartecho_MSP_EXP432E401Y_tirtos_ccs.out" "./library.obj" "./main.obj" "./mainThread.obj" "./syscfg/ti_drivers_config.obj" "../MSP_EXP432E401Y_TIRTOS.cmd" -l"ti/display/lib/display.aem4f" -l"ti/grlib/lib/ccs/m4f/grlib.a" -l"third_party/spiffs/lib/ccs/m4f/spiffs.a" -l"ti/drivers/lib/drivers_msp432e4.aem4f" -l"third_party/fatfs/lib/ccs/m4f/fatfs.a" -l"ti/dpl/lib/dpl_msp432e4.aem4f" -l"C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/linker.cmd"  -l"ti/devices/msp432e4/driverlib/lib/ccs/m4f/msp432e4_driverlib.a" -llibc.a 
+<Linking>
+warning #10457-D: Use of variable-length arrays is not thread-safe.
+Finished building target: "uartecho_MSP_EXP432E401Y_tirtos_ccs.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project tirtos_builds_MSP_EXP432E401Y_release_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+making ../src/sysbios/sysbios.aem4f ...
+gmake[1]: Nothing to be done for 'all'.
+gmake[1]: Nothing to be done for 'configPkg/linker.cmd'.
+making ../src/sysbios/sysbios.aem4f ...
+gmake[2]: Nothing to be done for 'all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+Building file: "../library.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="library.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "../library.c"
+Finished building: "../library.c"
+ 
+Building target: "uartecho_MSP_EXP432E401Y_tirtos_ccs.out"
+Invoking: Arm Linker
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on -z -m"uartecho_MSP_EXP432E401Y_tirtos_ccs.map" -i"C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" -i"C:/ti/simplelink_msp432e4_sdk_4_20_00_12/kernel/tirtos/packages" -i"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" --diag_wrap=off --display_error_number --warn_sections --xml_link_info="uartecho_MSP_EXP432E401Y_tirtos_ccs_linkInfo.xml" --rom_model -o "uartecho_MSP_EXP432E401Y_tirtos_ccs.out" "./library.obj" "./main.obj" "./mainThread.obj" "./syscfg/ti_drivers_config.obj" "../MSP_EXP432E401Y_TIRTOS.cmd" -l"ti/display/lib/display.aem4f" -l"ti/grlib/lib/ccs/m4f/grlib.a" -l"third_party/spiffs/lib/ccs/m4f/spiffs.a" -l"ti/drivers/lib/drivers_msp432e4.aem4f" -l"third_party/fatfs/lib/ccs/m4f/fatfs.a" -l"ti/dpl/lib/dpl_msp432e4.aem4f" -l"C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/linker.cmd"  -l"ti/devices/msp432e4/driverlib/lib/ccs/m4f/msp432e4_driverlib.a" -llibc.a 
+<Linking>
+warning #10457-D: Use of variable-length arrays is not thread-safe.
+Finished building target: "uartecho_MSP_EXP432E401Y_tirtos_ccs.out"
+ 
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 clean -O 
+ 
+DEL /F  "syscfg\ti_drivers_config.h" "syscfg\ti_utils_build_linker.cmd.exp" "syscfg\syscfg_c.rov.xs"  "syscfg\ti_drivers_config.c"  "uartecho_MSP_EXP432E401Y_tirtos_ccs.out" 
+DEL /F "library.obj" "main.obj" "mainThread.obj" "syscfg\ti_drivers_config.obj" 
+DEL /F "library.d" "main.d" "mainThread.d" "syscfg\ti_drivers_config.d" 
+RMDIR /S/Q  "syscfg\" 
+Finished clean
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project tirtos_builds_MSP_EXP432E401Y_release_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+making ../src/sysbios/sysbios.aem4f ...
+gmake[1]: Nothing to be done for 'all'.
+gmake[1]: Nothing to be done for 'configPkg/linker.cmd'.
+making ../src/sysbios/sysbios.aem4f ...
+gmake[2]: Nothing to be done for 'all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+Building file: "../uartecho.syscfg"
+Invoking: SysConfig
+"C:/ti/sysconfig_1.5.0/sysconfig_cli.bat" -s "C:/ti/simplelink_msp432e4_sdk_4_20_00_12/.metadata/product.json" -o "syscfg" "C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/uartecho.syscfg" --compiler ccs
+Running script...
+Validating...
+Generating Code...
+    '/ti/drivers' -> '/ti/devices/driverlib'
+Writing C:\Users\sfous\EmbeddedSystemsProject\uartecho_MSP_EXP432E401Y_tirtos_ccs\Debug\syscfg\ti_drivers_config.c...
+Writing C:\Users\sfous\EmbeddedSystemsProject\uartecho_MSP_EXP432E401Y_tirtos_ccs\Debug\syscfg\ti_drivers_config.h...
+Writing C:\Users\sfous\EmbeddedSystemsProject\uartecho_MSP_EXP432E401Y_tirtos_ccs\Debug\syscfg\ti_utils_build_linker.cmd.exp...
+Writing C:\Users\sfous\EmbeddedSystemsProject\uartecho_MSP_EXP432E401Y_tirtos_ccs\Debug\syscfg\syscfg_c.rov.xs...
+Finished building: "../uartecho.syscfg"
+ 
+Building file: "../mainThread.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="mainThread.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "../mainThread.c"
+Finished building: "../mainThread.c"
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="main.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "../main.c"
+Finished building: "../main.c"
+ 
+Building file: "syscfg/ti_drivers_config.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="syscfg/ti_drivers_config.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --obj_directory="syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "syscfg/ti_drivers_config.c"
+Finished building: "syscfg/ti_drivers_config.c"
+ 
+Building file: "../library.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="library.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "../library.c"
+Finished building: "../library.c"
+ 
+Building target: "uartecho_MSP_EXP432E401Y_tirtos_ccs.out"
+Invoking: Arm Linker
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on -z -m"uartecho_MSP_EXP432E401Y_tirtos_ccs.map" -i"C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" -i"C:/ti/simplelink_msp432e4_sdk_4_20_00_12/kernel/tirtos/packages" -i"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" --diag_wrap=off --display_error_number --warn_sections --xml_link_info="uartecho_MSP_EXP432E401Y_tirtos_ccs_linkInfo.xml" --rom_model -o "uartecho_MSP_EXP432E401Y_tirtos_ccs.out" "./library.obj" "./main.obj" "./mainThread.obj" "./syscfg/ti_drivers_config.obj" "../MSP_EXP432E401Y_TIRTOS.cmd" -l"ti/display/lib/display.aem4f" -l"ti/grlib/lib/ccs/m4f/grlib.a" -l"third_party/spiffs/lib/ccs/m4f/spiffs.a" -l"ti/drivers/lib/drivers_msp432e4.aem4f" -l"third_party/fatfs/lib/ccs/m4f/fatfs.a" -l"ti/dpl/lib/dpl_msp432e4.aem4f" -l"C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/linker.cmd"  -l"ti/devices/msp432e4/driverlib/lib/ccs/m4f/msp432e4_driverlib.a" -llibc.a 
+<Linking>
+Finished building target: "uartecho_MSP_EXP432E401Y_tirtos_ccs.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project tirtos_builds_MSP_EXP432E401Y_release_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+making ../src/sysbios/sysbios.aem4f ...
+gmake[1]: Nothing to be done for 'all'.
+gmake[1]: Nothing to be done for 'configPkg/linker.cmd'.
+making ../src/sysbios/sysbios.aem4f ...
+gmake[2]: Nothing to be done for 'all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+gmake[1]: 'uartecho_MSP_EXP432E401Y_tirtos_ccs.out' is up to date.
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 clean -O 
+ 
+DEL /F  "syscfg\ti_drivers_config.h" "syscfg\ti_utils_build_linker.cmd.exp" "syscfg\syscfg_c.rov.xs"  "syscfg\ti_drivers_config.c"  "uartecho_MSP_EXP432E401Y_tirtos_ccs.out" 
+DEL /F "library.obj" "main.obj" "mainThread.obj" "syscfg\ti_drivers_config.obj" 
+DEL /F "library.d" "main.d" "mainThread.d" "syscfg\ti_drivers_config.d" 
+RMDIR /S/Q  "syscfg\" 
+Finished clean
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project tirtos_builds_MSP_EXP432E401Y_release_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+making ../src/sysbios/sysbios.aem4f ...
+gmake[1]: Nothing to be done for 'all'.
+gmake[1]: Nothing to be done for 'configPkg/linker.cmd'.
+making ../src/sysbios/sysbios.aem4f ...
+gmake[2]: Nothing to be done for 'all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+Building file: "../uartecho.syscfg"
+Invoking: SysConfig
+"C:/ti/sysconfig_1.5.0/sysconfig_cli.bat" -s "C:/ti/simplelink_msp432e4_sdk_4_20_00_12/.metadata/product.json" -o "syscfg" "C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/uartecho.syscfg" --compiler ccs
+Running script...
+Validating...
+Generating Code...
+    '/ti/drivers' -> '/ti/devices/driverlib'
+Writing C:\Users\sfous\EmbeddedSystemsProject\uartecho_MSP_EXP432E401Y_tirtos_ccs\Debug\syscfg\ti_drivers_config.c...
+Writing C:\Users\sfous\EmbeddedSystemsProject\uartecho_MSP_EXP432E401Y_tirtos_ccs\Debug\syscfg\ti_drivers_config.h...
+Writing C:\Users\sfous\EmbeddedSystemsProject\uartecho_MSP_EXP432E401Y_tirtos_ccs\Debug\syscfg\ti_utils_build_linker.cmd.exp...
+Writing C:\Users\sfous\EmbeddedSystemsProject\uartecho_MSP_EXP432E401Y_tirtos_ccs\Debug\syscfg\syscfg_c.rov.xs...
+Finished building: "../uartecho.syscfg"
+ 
+Building file: "../mainThread.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="mainThread.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "../mainThread.c"
+Finished building: "../mainThread.c"
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="main.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "../main.c"
+Finished building: "../main.c"
+ 
+Building file: "syscfg/ti_drivers_config.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="syscfg/ti_drivers_config.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --obj_directory="syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "syscfg/ti_drivers_config.c"
+Finished building: "syscfg/ti_drivers_config.c"
+ 
+Building file: "../library.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="library.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "../library.c"
+Finished building: "../library.c"
+ 
+Building target: "uartecho_MSP_EXP432E401Y_tirtos_ccs.out"
+Invoking: Arm Linker
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on -z -m"uartecho_MSP_EXP432E401Y_tirtos_ccs.map" -i"C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" -i"C:/ti/simplelink_msp432e4_sdk_4_20_00_12/kernel/tirtos/packages" -i"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" --diag_wrap=off --display_error_number --warn_sections --xml_link_info="uartecho_MSP_EXP432E401Y_tirtos_ccs_linkInfo.xml" --rom_model -o "uartecho_MSP_EXP432E401Y_tirtos_ccs.out" "./library.obj" "./main.obj" "./mainThread.obj" "./syscfg/ti_drivers_config.obj" "../MSP_EXP432E401Y_TIRTOS.cmd" -l"ti/display/lib/display.aem4f" -l"ti/grlib/lib/ccs/m4f/grlib.a" -l"third_party/spiffs/lib/ccs/m4f/spiffs.a" -l"ti/drivers/lib/drivers_msp432e4.aem4f" -l"third_party/fatfs/lib/ccs/m4f/fatfs.a" -l"ti/dpl/lib/dpl_msp432e4.aem4f" -l"C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/linker.cmd"  -l"ti/devices/msp432e4/driverlib/lib/ccs/m4f/msp432e4_driverlib.a" -llibc.a 
+<Linking>
+Finished building target: "uartecho_MSP_EXP432E401Y_tirtos_ccs.out"
+ 
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 clean -O 
+ 
+DEL /F  "syscfg\ti_drivers_config.h" "syscfg\ti_utils_build_linker.cmd.exp" "syscfg\syscfg_c.rov.xs"  "syscfg\ti_drivers_config.c"  "uartecho_MSP_EXP432E401Y_tirtos_ccs.out" 
+DEL /F "library.obj" "main.obj" "mainThread.obj" "syscfg\ti_drivers_config.obj" 
+DEL /F "library.d" "main.d" "mainThread.d" "syscfg\ti_drivers_config.d" 
+RMDIR /S/Q  "syscfg\" 
+Finished clean
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project tirtos_builds_MSP_EXP432E401Y_release_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+making ../src/sysbios/sysbios.aem4f ...
+gmake[1]: Nothing to be done for 'all'.
+gmake[1]: Nothing to be done for 'configPkg/linker.cmd'.
+making ../src/sysbios/sysbios.aem4f ...
+gmake[2]: Nothing to be done for 'all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+Building file: "../uartecho.syscfg"
+Invoking: SysConfig
+"C:/ti/sysconfig_1.5.0/sysconfig_cli.bat" -s "C:/ti/simplelink_msp432e4_sdk_4_20_00_12/.metadata/product.json" -o "syscfg" "C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/uartecho.syscfg" --compiler ccs
+Running script...
+Validating...
+Generating Code...
+    '/ti/drivers' -> '/ti/devices/driverlib'
+Writing C:\Users\sfous\EmbeddedSystemsProject\uartecho_MSP_EXP432E401Y_tirtos_ccs\Debug\syscfg\ti_drivers_config.c...
+Writing C:\Users\sfous\EmbeddedSystemsProject\uartecho_MSP_EXP432E401Y_tirtos_ccs\Debug\syscfg\ti_drivers_config.h...
+Writing C:\Users\sfous\EmbeddedSystemsProject\uartecho_MSP_EXP432E401Y_tirtos_ccs\Debug\syscfg\ti_utils_build_linker.cmd.exp...
+Writing C:\Users\sfous\EmbeddedSystemsProject\uartecho_MSP_EXP432E401Y_tirtos_ccs\Debug\syscfg\syscfg_c.rov.xs...
+Finished building: "../uartecho.syscfg"
+ 
+Building file: "../mainThread.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="mainThread.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "../mainThread.c"
+Finished building: "../mainThread.c"
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="main.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "../main.c"
+Finished building: "../main.c"
+ 
+Building file: "../library.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="library.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "../library.c"
+Finished building: "../library.c"
+ 
+Building file: "syscfg/ti_drivers_config.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="syscfg/ti_drivers_config.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --obj_directory="syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "syscfg/ti_drivers_config.c"
+Finished building: "syscfg/ti_drivers_config.c"
+ 
+Building target: "uartecho_MSP_EXP432E401Y_tirtos_ccs.out"
+Invoking: Arm Linker
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on -z -m"uartecho_MSP_EXP432E401Y_tirtos_ccs.map" -i"C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" -i"C:/ti/simplelink_msp432e4_sdk_4_20_00_12/kernel/tirtos/packages" -i"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" --diag_wrap=off --display_error_number --warn_sections --xml_link_info="uartecho_MSP_EXP432E401Y_tirtos_ccs_linkInfo.xml" --rom_model -o "uartecho_MSP_EXP432E401Y_tirtos_ccs.out" "./library.obj" "./main.obj" "./mainThread.obj" "./syscfg/ti_drivers_config.obj" "../MSP_EXP432E401Y_TIRTOS.cmd" -l"ti/display/lib/display.aem4f" -l"ti/grlib/lib/ccs/m4f/grlib.a" -l"third_party/spiffs/lib/ccs/m4f/spiffs.a" -l"ti/drivers/lib/drivers_msp432e4.aem4f" -l"third_party/fatfs/lib/ccs/m4f/fatfs.a" -l"ti/dpl/lib/dpl_msp432e4.aem4f" -l"C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/linker.cmd"  -l"ti/devices/msp432e4/driverlib/lib/ccs/m4f/msp432e4_driverlib.a" -llibc.a 
+<Linking>
+Finished building target: "uartecho_MSP_EXP432E401Y_tirtos_ccs.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project tirtos_builds_MSP_EXP432E401Y_release_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+making ../src/sysbios/sysbios.aem4f ...
+gmake[1]: Nothing to be done for 'all'.
+gmake[1]: Nothing to be done for 'configPkg/linker.cmd'.
+making ../src/sysbios/sysbios.aem4f ...
+gmake[2]: Nothing to be done for 'all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+gmake[1]: 'uartecho_MSP_EXP432E401Y_tirtos_ccs.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project tirtos_builds_MSP_EXP432E401Y_release_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+making ../src/sysbios/sysbios.aem4f ...
+gmake[1]: Nothing to be done for 'all'.
+gmake[1]: Nothing to be done for 'configPkg/linker.cmd'.
+making ../src/sysbios/sysbios.aem4f ...
+gmake[2]: Nothing to be done for 'all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+gmake[1]: 'uartecho_MSP_EXP432E401Y_tirtos_ccs.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project tirtos_builds_MSP_EXP432E401Y_release_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+making ../src/sysbios/sysbios.aem4f ...
+gmake[1]: Nothing to be done for 'all'.
+gmake[1]: Nothing to be done for 'configPkg/linker.cmd'.
+making ../src/sysbios/sysbios.aem4f ...
+gmake[2]: Nothing to be done for 'all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="main.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "../main.c"
+Finished building: "../main.c"
+ 
+Building target: "uartecho_MSP_EXP432E401Y_tirtos_ccs.out"
+Invoking: Arm Linker
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on -z -m"uartecho_MSP_EXP432E401Y_tirtos_ccs.map" -i"C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" -i"C:/ti/simplelink_msp432e4_sdk_4_20_00_12/kernel/tirtos/packages" -i"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" --diag_wrap=off --display_error_number --warn_sections --xml_link_info="uartecho_MSP_EXP432E401Y_tirtos_ccs_linkInfo.xml" --rom_model -o "uartecho_MSP_EXP432E401Y_tirtos_ccs.out" "./library.obj" "./main.obj" "./mainThread.obj" "./syscfg/ti_drivers_config.obj" "../MSP_EXP432E401Y_TIRTOS.cmd" -l"ti/display/lib/display.aem4f" -l"ti/grlib/lib/ccs/m4f/grlib.a" -l"third_party/spiffs/lib/ccs/m4f/spiffs.a" -l"ti/drivers/lib/drivers_msp432e4.aem4f" -l"third_party/fatfs/lib/ccs/m4f/fatfs.a" -l"ti/dpl/lib/dpl_msp432e4.aem4f" -l"C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/linker.cmd"  -l"ti/devices/msp432e4/driverlib/lib/ccs/m4f/msp432e4_driverlib.a" -llibc.a 
+<Linking>
+Finished building target: "uartecho_MSP_EXP432E401Y_tirtos_ccs.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project tirtos_builds_MSP_EXP432E401Y_release_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+making ../src/sysbios/sysbios.aem4f ...
+gmake[1]: Nothing to be done for 'all'.
+gmake[1]: Nothing to be done for 'configPkg/linker.cmd'.
+making ../src/sysbios/sysbios.aem4f ...
+gmake[2]: Nothing to be done for 'all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+gmake[1]: 'uartecho_MSP_EXP432E401Y_tirtos_ccs.out' is up to date.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project tirtos_builds_MSP_EXP432E401Y_release_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+making ../src/sysbios/sysbios.aem4f ...
+gmake[1]: Nothing to be done for 'all'.
+gmake[1]: Nothing to be done for 'configPkg/linker.cmd'.
+making ../src/sysbios/sysbios.aem4f ...
+gmake[2]: Nothing to be done for 'all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+gmake[1]: 'uartecho_MSP_EXP432E401Y_tirtos_ccs.out' is up to date.
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 clean -O 
+ 
+DEL /F  "syscfg\ti_drivers_config.h" "syscfg\ti_utils_build_linker.cmd.exp" "syscfg\syscfg_c.rov.xs"  "syscfg\ti_drivers_config.c"  "uartecho_MSP_EXP432E401Y_tirtos_ccs.out" 
+DEL /F "library.obj" "main.obj" "mainThread.obj" "syscfg\ti_drivers_config.obj" 
+DEL /F "library.d" "main.d" "mainThread.d" "syscfg\ti_drivers_config.d" 
+RMDIR /S/Q  "syscfg\" 
+Finished clean
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project tirtos_builds_MSP_EXP432E401Y_release_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+making ../src/sysbios/sysbios.aem4f ...
+gmake[1]: Nothing to be done for 'all'.
+gmake[1]: Nothing to be done for 'configPkg/linker.cmd'.
+making ../src/sysbios/sysbios.aem4f ...
+gmake[2]: Nothing to be done for 'all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+Building file: "../uartecho.syscfg"
+Invoking: SysConfig
+"C:/ti/sysconfig_1.5.0/sysconfig_cli.bat" -s "C:/ti/simplelink_msp432e4_sdk_4_20_00_12/.metadata/product.json" -o "syscfg" "C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/uartecho.syscfg" --compiler ccs
+Running script...
+Validating...
+Generating Code...
+    '/ti/drivers' -> '/ti/devices/driverlib'
+Writing C:\Users\sfous\EmbeddedSystemsProject\uartecho_MSP_EXP432E401Y_tirtos_ccs\Debug\syscfg\ti_drivers_config.c...
+Writing C:\Users\sfous\EmbeddedSystemsProject\uartecho_MSP_EXP432E401Y_tirtos_ccs\Debug\syscfg\ti_drivers_config.h...
+Writing C:\Users\sfous\EmbeddedSystemsProject\uartecho_MSP_EXP432E401Y_tirtos_ccs\Debug\syscfg\ti_utils_build_linker.cmd.exp...
+Writing C:\Users\sfous\EmbeddedSystemsProject\uartecho_MSP_EXP432E401Y_tirtos_ccs\Debug\syscfg\syscfg_c.rov.xs...
+Finished building: "../uartecho.syscfg"
+ 
+Building file: "../mainThread.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="mainThread.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "../mainThread.c"
+Finished building: "../mainThread.c"
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="main.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "../main.c"
+Finished building: "../main.c"
+ 
+Building file: "syscfg/ti_drivers_config.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="syscfg/ti_drivers_config.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --obj_directory="syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "syscfg/ti_drivers_config.c"
+Finished building: "syscfg/ti_drivers_config.c"
+ 
+Building file: "../library.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="library.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "../library.c"
+Finished building: "../library.c"
+ 
+Building target: "uartecho_MSP_EXP432E401Y_tirtos_ccs.out"
+Invoking: Arm Linker
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on -z -m"uartecho_MSP_EXP432E401Y_tirtos_ccs.map" -i"C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" -i"C:/ti/simplelink_msp432e4_sdk_4_20_00_12/kernel/tirtos/packages" -i"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" --diag_wrap=off --display_error_number --warn_sections --xml_link_info="uartecho_MSP_EXP432E401Y_tirtos_ccs_linkInfo.xml" --rom_model -o "uartecho_MSP_EXP432E401Y_tirtos_ccs.out" "./library.obj" "./main.obj" "./mainThread.obj" "./syscfg/ti_drivers_config.obj" "../MSP_EXP432E401Y_TIRTOS.cmd" -l"ti/display/lib/display.aem4f" -l"ti/grlib/lib/ccs/m4f/grlib.a" -l"third_party/spiffs/lib/ccs/m4f/spiffs.a" -l"ti/drivers/lib/drivers_msp432e4.aem4f" -l"third_party/fatfs/lib/ccs/m4f/fatfs.a" -l"ti/dpl/lib/dpl_msp432e4.aem4f" -l"C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/linker.cmd"  -l"ti/devices/msp432e4/driverlib/lib/ccs/m4f/msp432e4_driverlib.a" -llibc.a 
+<Linking>
+Finished building target: "uartecho_MSP_EXP432E401Y_tirtos_ccs.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project tirtos_builds_MSP_EXP432E401Y_release_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+making ../src/sysbios/sysbios.aem4f ...
+gmake[1]: Nothing to be done for 'all'.
+gmake[1]: Nothing to be done for 'configPkg/linker.cmd'.
+making ../src/sysbios/sysbios.aem4f ...
+gmake[2]: Nothing to be done for 'all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+gmake[1]: 'uartecho_MSP_EXP432E401Y_tirtos_ccs.out' is up to date.
+
+**** Build Finished ****
+
+**** Clean-only build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 clean -O 
+ 
+DEL /F  "syscfg\ti_drivers_config.h" "syscfg\ti_utils_build_linker.cmd.exp" "syscfg\syscfg_c.rov.xs"  "syscfg\ti_drivers_config.c"  "uartecho_MSP_EXP432E401Y_tirtos_ccs.out" 
+DEL /F "library.obj" "main.obj" "mainThread.obj" "syscfg\ti_drivers_config.obj" 
+DEL /F "library.d" "main.d" "mainThread.d" "syscfg\ti_drivers_config.d" 
+RMDIR /S/Q  "syscfg\" 
+Finished clean
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project tirtos_builds_MSP_EXP432E401Y_release_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+making ../src/sysbios/sysbios.aem4f ...
+gmake[1]: Nothing to be done for 'all'.
+gmake[1]: Nothing to be done for 'configPkg/linker.cmd'.
+making ../src/sysbios/sysbios.aem4f ...
+gmake[2]: Nothing to be done for 'all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+Building file: "../uartecho.syscfg"
+Invoking: SysConfig
+"C:/ti/sysconfig_1.5.0/sysconfig_cli.bat" -s "C:/ti/simplelink_msp432e4_sdk_4_20_00_12/.metadata/product.json" -o "syscfg" "C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/uartecho.syscfg" --compiler ccs
+Running script...
+Validating...
+Generating Code...
+    '/ti/drivers' -> '/ti/devices/driverlib'
+Writing C:\Users\sfous\EmbeddedSystemsProject\uartecho_MSP_EXP432E401Y_tirtos_ccs\Debug\syscfg\ti_drivers_config.c...
+Writing C:\Users\sfous\EmbeddedSystemsProject\uartecho_MSP_EXP432E401Y_tirtos_ccs\Debug\syscfg\ti_drivers_config.h...
+Writing C:\Users\sfous\EmbeddedSystemsProject\uartecho_MSP_EXP432E401Y_tirtos_ccs\Debug\syscfg\ti_utils_build_linker.cmd.exp...
+Writing C:\Users\sfous\EmbeddedSystemsProject\uartecho_MSP_EXP432E401Y_tirtos_ccs\Debug\syscfg\syscfg_c.rov.xs...
+Finished building: "../uartecho.syscfg"
+ 
+Building file: "../mainThread.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="mainThread.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "../mainThread.c"
+Finished building: "../mainThread.c"
+ 
+Building file: "../main.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="main.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "../main.c"
+Finished building: "../main.c"
+ 
+Building file: "syscfg/ti_drivers_config.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="syscfg/ti_drivers_config.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --obj_directory="syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "syscfg/ti_drivers_config.c"
+Finished building: "syscfg/ti_drivers_config.c"
+ 
+Building file: "../library.c"
+Invoking: Arm Compiler
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/third_party/CMSIS/Include" --include_path="C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/posix/ccs" --include_path="C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/include" --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on --preproc_with_compile --preproc_dependency="library.d_raw" --include_path="C:/Users/sfous/EmbeddedSystemsProject/uartecho_MSP_EXP432E401Y_tirtos_ccs/Debug/syscfg" --cmd_file="C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/compiler.opt"  "../library.c"
+Finished building: "../library.c"
+ 
+Building target: "uartecho_MSP_EXP432E401Y_tirtos_ccs.out"
+Invoking: Arm Linker
+"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=none -g --diag_warning=225 --diag_warning=255 --diag_wrap=off --display_error_number --gen_func_subsections=on -z -m"uartecho_MSP_EXP432E401Y_tirtos_ccs.map" -i"C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source" -i"C:/ti/simplelink_msp432e4_sdk_4_20_00_12/kernel/tirtos/packages" -i"C:/ti/ccs1240/ccs/tools/compiler/ti-cgt-arm_20.2.7.LTS/lib" --diag_wrap=off --display_error_number --warn_sections --xml_link_info="uartecho_MSP_EXP432E401Y_tirtos_ccs_linkInfo.xml" --rom_model -o "uartecho_MSP_EXP432E401Y_tirtos_ccs.out" "./library.obj" "./main.obj" "./mainThread.obj" "./syscfg/ti_drivers_config.obj" "../MSP_EXP432E401Y_TIRTOS.cmd" -l"ti/display/lib/display.aem4f" -l"ti/grlib/lib/ccs/m4f/grlib.a" -l"third_party/spiffs/lib/ccs/m4f/spiffs.a" -l"ti/drivers/lib/drivers_msp432e4.aem4f" -l"third_party/fatfs/lib/ccs/m4f/fatfs.a" -l"ti/dpl/lib/dpl_msp432e4.aem4f" -l"C:/Users/sfous/EmbeddedSystemsProject/tirtos_builds_MSP_EXP432E401Y_release_ccs/Debug/configPkg/linker.cmd"  -l"ti/devices/msp432e4/driverlib/lib/ccs/m4f/msp432e4_driverlib.a" -llibc.a 
+<Linking>
+Finished building target: "uartecho_MSP_EXP432E401Y_tirtos_ccs.out"
+ 
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project tirtos_builds_MSP_EXP432E401Y_release_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+making ../src/sysbios/sysbios.aem4f ...
+gmake[1]: Nothing to be done for 'all'.
+gmake[1]: Nothing to be done for 'configPkg/linker.cmd'.
+making ../src/sysbios/sysbios.aem4f ...
+gmake[2]: Nothing to be done for 'all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+gmake[1]: 'uartecho_MSP_EXP432E401Y_tirtos_ccs.out' is up to date.
+
+**** Build Finished ****
