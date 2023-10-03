@@ -1,0 +1,95 @@
+#ifndef LIBRARY_H_
+#define LIBRARY_H_
+
+#define NUMERROR 4
+#define VERSION "4.1"
+#define ASSIGNMENT 4
+#define AUTHOR "Shelton Foust"
+#define MAXLEN 365
+#define NUMGPIO 8
+#define NUMCALLBACK 4
+
+#define MSG_OVERFLOW 0
+#define INVALID_OPERATION 1
+#define WRONG_TYPE 2
+#define BAD_NUMBER 3
+#include <ti/drivers/UART.h>
+#include <ti/drivers/GPIO.h>
+#include <ti/sysbios/BIOS.h>
+#include <ti/sysbios/gates/GateSwi.h>
+#include <ti/sysbios/knl/Swi.h>
+#include <ti/sysbios/knl/Task.h>
+#include <ti/drivers/Timer.h>
+#include <ti/sysbios/knl/Semaphore.h>
+#include <stdbool.h>
+
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Structs
+
+
+typedef struct _callback
+{
+    int index;
+    int count;
+    bool hwi_flag;
+    char payload[MAXLEN];
+} Callback;
+
+typedef struct _BiosStruct
+{
+    Task_Handle uart0ReadTask;
+    Task_Handle messageTask;
+    Semaphore_Handle uart0ReadSemaphore;
+    Swi_Handle timer0Swi;
+    GateSwi_Handle callbackGate;
+} BiosStruct;
+
+typedef struct _GlobalStruct
+{
+    int timer0Period;
+    int errorCounts[NUMERROR];
+    Callback callbacks[NUMCALLBACK];
+    BiosStruct bios;
+    UART_Handle uart;
+    Timer_Handle timer0;
+} GlobalStruct;
+
+
+
+
+
+
+
+
+
+// Structs
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+GlobalStruct Glo;
+
+
+
+void aboutParse(UART_Handle uart);
+void errorParse(UART_Handle uart, char* input);
+void errorBase(UART_Handle uart);
+void gpioBase(UART_Handle uart);
+void helpBase(UART_Handle uart);
+void memoryReadParse(UART_Handle uart, char* input);
+void printParse(UART_Handle uart, char* input);
+void readGPIOprint(UART_Handle uart, int gpio);
+void writeGPIOprint(UART_Handle uart, int gpioNum, char* remainder);
+void removeSpaces(char* noSpaces, const char* input);
+void gpioParse(UART_Handle uart, char* input);
+void helpParse(UART_Handle uart, char* input);
+int startsWith(char *input, char *commandName);
+
+
+
+#endif

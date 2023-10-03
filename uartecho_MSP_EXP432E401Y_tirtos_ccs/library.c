@@ -9,17 +9,17 @@ void aboutParse(UART_Handle uart)
 {
     char output[MAXLEN];
     sprintf(output, "Author: %s\n\r", AUTHOR);
-    UART_write(uart, &output, strlen(output));
+    UART_write(Glo.uart, &output, strlen(output));
     sprintf(output, "Version: %s\n\r", VERSION);
-    UART_write(uart, &output, strlen(output));
+    UART_write(Glo.uart, &output, strlen(output));
     sprintf(output, "Assignment: %d\n\r", ASSIGNMENT);
-    UART_write(uart, &output, strlen(output));
+    UART_write(Glo.uart, &output, strlen(output));
     sprintf(output, "Compile Timestamp: %s %s\n\r", __TIME__, __DATE__);
-    UART_write(uart, &output, strlen(output));
+    UART_write(Glo.uart, &output, strlen(output));
 }
 
 
-void errorParse(UART_Handle uart, char* input)
+void errorParse(char* input)
 {
 
     char noSpaces[MAXLEN];
@@ -32,16 +32,16 @@ void errorParse(UART_Handle uart, char* input)
     if (strlen("-error") == strlen(noSpaces))
     {
 
-        errorBase(uart);
+        errorBase();
     }
     else if (startsWith(afterCommand, "c"))
     {
         int error;
         for (error = 0; error < NUMERROR; error++)
         {
-            errorCounts[error] = 0;
+            Glo.errorCounts[error] = 0;
         }
-        errorBase(uart);
+        errorBase();
     }
     else
     {
@@ -52,34 +52,34 @@ void errorParse(UART_Handle uart, char* input)
         {
             char output [MAXLEN];
             sprintf(output, "A number or \"c\" was expected after -error\n\r");
-            UART_write(uart, &output, strlen(output));
-            errorCounts[WRONG_TYPE]++;
+            UART_write(Glo.uart, &output, strlen(output));
+            Glo.errorCounts[WRONG_TYPE]++;
         }
         else if (error == MSG_OVERFLOW)
         {
-            sprintf(output, "%d. Message Overflow: %d\n\r", MSG_OVERFLOW, errorCounts[MSG_OVERFLOW]);
-            UART_write(uart, &output, strlen(output));
+            sprintf(output, "%d. Message Overflow: %d\n\r", MSG_OVERFLOW, Glo.errorCounts[MSG_OVERFLOW]);
+            UART_write(Glo.uart, &output, strlen(output));
         }
         else if (error == INVALID_OPERATION)
         {
-            sprintf(output, "%d. Invalid Operation: %d\n\r", INVALID_OPERATION, errorCounts[INVALID_OPERATION]);
-            UART_write(uart, &output, strlen(output));
+            sprintf(output, "%d. Invalid Operation: %d\n\r", INVALID_OPERATION, Glo.errorCounts[INVALID_OPERATION]);
+            UART_write(Glo.uart, &output, strlen(output));
         }
         else if (error == WRONG_TYPE)
         {
-            sprintf(output, "%d. Wrong Type: %d\n\r", WRONG_TYPE, errorCounts[WRONG_TYPE]);
-            UART_write(uart, &output, strlen(output));
+            sprintf(output, "%d. Wrong Type: %d\n\r", WRONG_TYPE, Glo.errorCounts[WRONG_TYPE]);
+            UART_write(Glo.uart, &output, strlen(output));
         }
         else if (error == BAD_NUMBER)
         {
-            sprintf(output, "%d. Bad Number: %d\n\r", BAD_NUMBER, errorCounts[BAD_NUMBER]);
-            UART_write(uart, &output, strlen(output));
+            sprintf(output, "%d. Bad Number: %d\n\r", BAD_NUMBER, Glo.errorCounts[BAD_NUMBER]);
+            UART_write(Glo.uart, &output, strlen(output));
         }
         else
         {
             sprintf(output, "Only error numbers 0 - %d are supported.\n\r", NUMERROR);
-            UART_write(uart, &output, strlen(output));
-            errorCounts[BAD_NUMBER]++;
+            UART_write(Glo.uart, &output, strlen(output));
+            Glo.errorCounts[BAD_NUMBER]++;
         }
     }
 }
@@ -87,17 +87,17 @@ void errorParse(UART_Handle uart, char* input)
 void errorBase(UART_Handle uart)
 {
     char output[MAXLEN];
-    sprintf(output, "%d. Message Overflow: %d\n\r", MSG_OVERFLOW, errorCounts[MSG_OVERFLOW]);
-    UART_write(uart, &output, strlen(output));
+    sprintf(output, "%d. Message Overflow: %d\n\r", MSG_OVERFLOW, Glo.errorCounts[MSG_OVERFLOW]);
+    UART_write(Glo.uart, &output, strlen(output));
 
-    sprintf(output, "%d. Invalid Operation: %d\n\r", INVALID_OPERATION, errorCounts[INVALID_OPERATION]);
-    UART_write(uart, &output, strlen(output));
+    sprintf(output, "%d. Invalid Operation: %d\n\r", INVALID_OPERATION, Glo.errorCounts[INVALID_OPERATION]);
+    UART_write(Glo.uart, &output, strlen(output));
 
-    sprintf(output, "%d. Wrong Type: %d\n\r", WRONG_TYPE, errorCounts[WRONG_TYPE]);
-    UART_write(uart, &output, strlen(output));
+    sprintf(output, "%d. Wrong Type: %d\n\r", WRONG_TYPE, Glo.errorCounts[WRONG_TYPE]);
+    UART_write(Glo.uart, &output, strlen(output));
 
-    sprintf(output, "%d. Bad Number: %d\n\r", BAD_NUMBER, errorCounts[BAD_NUMBER]);
-    UART_write(uart, &output, strlen(output));
+    sprintf(output, "%d. Bad Number: %d\n\r", BAD_NUMBER, Glo.errorCounts[BAD_NUMBER]);
+    UART_write(Glo.uart, &output, strlen(output));
 }
 
 
@@ -105,7 +105,7 @@ void errorBase(UART_Handle uart)
 // GPIO Parsing
 
 
-void gpioParse(UART_Handle uart, char* input)
+void gpioParse(char* input)
 {
     char noSpaces[MAXLEN];
 
@@ -115,7 +115,7 @@ void gpioParse(UART_Handle uart, char* input)
     strncpy(afterCommand, noSpaces + strlen("-gpio"), lenAfterCommand);
     if (strlen("-gpio") == strlen(noSpaces) || startsWith(afterCommand, "r"))
     {
-        gpioBase(uart);
+        gpioBase();
         return;
     }
 
@@ -126,59 +126,59 @@ void gpioParse(UART_Handle uart, char* input)
     {
         char output[MAXLEN];
         sprintf(output, "Only GPIOs 0 - %d are available.\n\r", NUMGPIO - 1);
-        UART_write(uart, &output, strlen(output));
-        errorCounts[BAD_NUMBER]++;
+        UART_write(Glo.uart, &output, strlen(output));
+        Glo.errorCounts[BAD_NUMBER]++;
         return;
     }
     strncpy(remainder, afterCommand + 1, lenAfterCommand - 1); // assumes gpio int is 1 digit
 
     if (*remainderPtr == 0)
     {
-        readGPIOprint(uart, gpio);
+        readGPIOprint(gpio);
     }
     else if(startsWith(remainder, "r"))
     {
-        readGPIOprint(uart, gpio);
+        readGPIOprint(gpio);
     }
     else if(startsWith(remainder, "w"))
     {
-        writeGPIOprint(uart, gpio, remainder);
+        writeGPIOprint(gpio, remainder);
     }
     else if (startsWith(remainder, "t"))
     {
         GPIO_toggle(gpio);
-        readGPIOprint(uart, gpio);
+        readGPIOprint(gpio);
     }
     else
     {
         char output[MAXLEN];
         sprintf(output, "Operation \"%s\" not valid.\n\r", input);
-        UART_write(uart, &output, strlen(output));
-        errorCounts[INVALID_OPERATION]++;
+        UART_write(Glo.uart, &output, strlen(output));
+        Glo.errorCounts[INVALID_OPERATION]++;
     }
     return;
 }
 
 
-void gpioBase(UART_Handle uart)
+void gpioBase()
 {
     int gpio = 0;
     for (gpio = 0; gpio < NUMGPIO; gpio++)
     {
-       readGPIOprint(uart, gpio);
+       readGPIOprint(gpio);
     }
 }
 
-void readGPIOprint(UART_Handle uart, int gpio)
+void readGPIOprint(int gpio)
 {
     char output[MAXLEN];
     int gpioState = GPIO_read(gpio);
     sprintf(output, "\tgpio %d: %d\n\r", gpio, gpioState);
-    UART_write(uart, &output, strlen(output));
+    UART_write(Glo.uart, &output, strlen(output));
 }
 
 
-void writeGPIOprint(UART_Handle uart, int gpioNum, char* remainder)
+void writeGPIOprint(int gpioNum, char* remainder)
 {
     char *endPtr;
     char gpioString[MAXLEN];
@@ -189,20 +189,20 @@ void writeGPIOprint(UART_Handle uart, int gpioNum, char* remainder)
     {
         char output [MAXLEN];
         sprintf(output, "State was expected after -gpio w\n\r");
-        UART_write(uart, &output, strlen(output));
-        errorCounts[WRONG_TYPE]++;
+        UART_write(Glo.uart, &output, strlen(output));
+        Glo.errorCounts[WRONG_TYPE]++;
     }
     else if (gpioState != 0 && gpioState != 1)
     {
         char output [MAXLEN];
         sprintf(output, "GPIO state can only be one or zero.\n\r");
-        UART_write(uart, &output, strlen(output));
-        errorCounts[BAD_NUMBER]++;
+        UART_write(Glo.uart, &output, strlen(output));
+        Glo.errorCounts[BAD_NUMBER]++;
     }
     else
     {
         GPIO_write(gpioNum, gpioState);
-        readGPIOprint(uart, gpioNum);
+        readGPIOprint(gpioNum);
     }
 }
 
@@ -211,7 +211,7 @@ void writeGPIOprint(UART_Handle uart, int gpioNum, char* remainder)
 ////////////////////////////////////////
 
 
-void helpParse(UART_Handle uart, char* input)
+void helpParse(char* input)
 {
     char afterCommand[MAXLEN];
     char output[MAXLEN];
@@ -221,7 +221,7 @@ void helpParse(UART_Handle uart, char* input)
 
     if (strlen("-help") == strlen(noSpaces))
     {
-        helpBase(uart);
+        helpBase(Glo.uart);
         return;
     }
     int lenAfterCommand = strlen(noSpaces) - strlen("-help");
@@ -231,53 +231,53 @@ void helpParse(UART_Handle uart, char* input)
     if      (startsWith(afterCommand, "-about") || startsWith(afterCommand, "about"))
     {
         sprintf(output, "Displays compile time, compile date, author, version, and homework number.\n\r");
-        UART_write(uart, &output, strlen(output));
+        UART_write(Glo.uart, &output, strlen(output));
     }
     else if (startsWith(afterCommand, "-gpio") || startsWith(afterCommand, "gpio"))
     {
         sprintf(output, "Allows to read, write, and toggle gpios.\n\r");
-        UART_write(uart, &output, strlen(output));
+        UART_write(Glo.uart, &output, strlen(output));
         sprintf(output, "gpio 0 to 3: LEDs.\n\r");
-        UART_write(uart, &output, strlen(output));
+        UART_write(Glo.uart, &output, strlen(output));
         sprintf(output, "gpio 4: PK5\n\r");
-        UART_write(uart, &output, strlen(output));
+        UART_write(Glo.uart, &output, strlen(output));
         sprintf(output, "gpio 5: PD4\n\r");
-        UART_write(uart, &output, strlen(output));
+        UART_write(Glo.uart, &output, strlen(output));
         sprintf(output, "gpio 6-7 switches on the sides of the board\n\r");
-        UART_write(uart, &output, strlen(output));
+        UART_write(Glo.uart, &output, strlen(output));
     }
     else if (startsWith(afterCommand, "-error") || startsWith(afterCommand, "error"))
     {
         sprintf(output, "Prints out counts of each kind of error.\n\r");
-        UART_write(uart, &output, strlen(output));
+        UART_write(Glo.uart, &output, strlen(output));
     }
     else if (startsWith(afterCommand, "-help") || startsWith(afterCommand, "help"))
     {
         sprintf(output, "Lists commands and displays informations about commands.\n\r");
-        UART_write(uart, &output, strlen(output));
+        UART_write(Glo.uart, &output, strlen(output));
     }
     else if (startsWith(afterCommand, "-memr") || startsWith(afterCommand, "memr"))
     {
             sprintf(output, "Displays memory contents of four locations by the address.\n\r");
-            UART_write(uart, &output, strlen(output));
+            UART_write(Glo.uart, &output, strlen(output));
             sprintf(output, "0x00000000 to 0x000FFFFF: Flash\n\r");
-            UART_write(uart, &output, strlen(output));
+            UART_write(Glo.uart, &output, strlen(output));
             sprintf(output, "0x20000000 to 0x2003FFFF: SRAM\n\r");
-            UART_write(uart, &output, strlen(output));
+            UART_write(Glo.uart, &output, strlen(output));
             sprintf(output, "0x40000000 to 0x44054FFF: Peripherals (use caution)\n\r");
-            UART_write(uart, &output, strlen(output));
+            UART_write(Glo.uart, &output, strlen(output));
 
     }
     else if (startsWith(afterCommand, "-print") || startsWith(afterCommand, "print"))
     {
         sprintf(output, "Prints out string after the command.\n\r");
-        UART_write(uart, &output, strlen(output));
+        UART_write(Glo.uart, &output, strlen(output));
     }
 
     else
     {
         sprintf(output, "Operation \"%s\" not valid.\n\r\n\r", afterCommand);
-        UART_write(uart, &output, strlen(output));
+        UART_write(Glo.uart, &output, strlen(output));
     }
 }
 
@@ -286,22 +286,22 @@ void helpBase(UART_Handle uart)
 {
     char output[MAXLEN];
     sprintf(output, "\t%s\n\r", "-about");
-    UART_write(uart, &output, strlen(output));
+    UART_write(Glo.uart, &output, strlen(output));
     sprintf(output, "\t%s\n\r", "-error");
-    UART_write(uart, &output, strlen(output));
+    UART_write(Glo.uart, &output, strlen(output));
     sprintf(output, "\t%s\n\r", "-gpio [gpioNum] [action]");
-    UART_write(uart, &output, strlen(output));
+    UART_write(Glo.uart, &output, strlen(output));
     sprintf(output, "\t%s\n\r", "-help [command]");
-    UART_write(uart, &output, strlen(output));
+    UART_write(Glo.uart, &output, strlen(output));
     sprintf(output, "\t%s\n\r", "-memr [address]");
-    UART_write(uart, &output, strlen(output));
+    UART_write(Glo.uart, &output, strlen(output));
     sprintf(output, "\t%s\n\r\n\r", "-print [string]");
-    UART_write(uart, &output, strlen(output));
+    UART_write(Glo.uart, &output, strlen(output));
     return;
 }
 
 
-void memoryReadParse(UART_Handle uart, char* input)
+void memoryReadParse(char* input)
 {
     long int address;
     char noSpaces[MAXLEN];
@@ -328,43 +328,43 @@ void memoryReadParse(UART_Handle uart, char* input)
         (address > 0x2003FFFF && address < 0x40000000))
     {
         sprintf(output, "Address 0x%010X is out of range.\n\r", address);
-        UART_write(uart, &output, strlen(output));
-        errorCounts[BAD_NUMBER]++;
+        UART_write(Glo.uart, &output, strlen(output));
+        Glo.errorCounts[BAD_NUMBER]++;
         return;
     }
     else if (address > 0x44054FFF)
     {
         sprintf(output, "Address is out of range.\n\r");
-                UART_write(uart, &output, strlen(output));
+                UART_write(Glo.uart, &output, strlen(output));
                 return;
     }
 
 
     int value;
     sprintf(output, "0x%010X 0x%010X 0x%010X 0x%010X\n\r", address + 0xC, address + 0x8, address + 0x4, address);
-    UART_write(uart, &output, strlen(output));
+    UART_write(Glo.uart, &output, strlen(output));
 
     value = *(int *) (address + 0xC);
     sprintf(output, "0x%010X ", value);
-    UART_write(uart, &output, strlen(output));
+    UART_write(Glo.uart, &output, strlen(output));
 
     value = *(int *) (address + 0x8);
     sprintf(output, "0x%010X ", value);
-    UART_write(uart, &output, strlen(output));
+    UART_write(Glo.uart, &output, strlen(output));
 
     value = *(int *) (address + 0x4);
     sprintf(output, "0x%010X ", value);
-    UART_write(uart, &output, strlen(output));
+    UART_write(Glo.uart, &output, strlen(output));
 
     value = *(int *) (address + 0x0);
     sprintf(output, "0x%010X\n\r", value);
-    UART_write(uart, &output, strlen(output));
+    UART_write(Glo.uart, &output, strlen(output));
     return;
 
 }
 
 
-void printParse(UART_Handle uart, char* input)
+void printParse(char* input)
 {
     char afterCommand[MAXLEN];
     char output[MAXLEN];
@@ -372,7 +372,7 @@ void printParse(UART_Handle uart, char* input)
     if (strlen("-print") == strlen(input))
     {
         sprintf(output, "\n\r");
-        UART_write(uart, &output, strlen(output));
+        UART_write(Glo.uart, &output, strlen(output));
         return;
     }
     int lenAfterCommand = strlen(input) - strlen("-print");
@@ -383,7 +383,7 @@ void printParse(UART_Handle uart, char* input)
         if (strlen(afterCommand) == 1)
         {
             sprintf(output, "\n\r");
-            UART_write(uart, &output, strlen(output));
+            UART_write(Glo.uart, &output, strlen(output));
             return;
         }
         char tempString[MAXLEN];
@@ -392,7 +392,7 @@ void printParse(UART_Handle uart, char* input)
         afterCommand[strlen(tempString) - 1] = 0;
     }
    sprintf(output, "%s\n\r", afterCommand);
-   UART_write(uart, &output, strlen(output));
+   UART_write(Glo.uart, &output, strlen(output));
    return;
 }
 
@@ -401,48 +401,6 @@ void printParse(UART_Handle uart, char* input)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// Structs
-
-
-typedef struct _callback
-{
-    int index;
-    int count;
-    bool hwi_flag;
-    char payload[MAXLEN];
-} Callback;
-
-
-typedef struct _GlobalStruct
-{
-    int timer0Period;
-    int errorCounts[NUMERROR];
-    Callback callbacks[NUMCALLBACK];
-    BiosStruct bios;
-    DeviceStruct devices;
-} GlobalStruct;
-
-
-typedef struct _DeviceStruct
-{
-    UART_Handle uart0;
-    Timer_Handle timer0;
-} DeviceStruct;
-
-
-typedef struct _BiosStruct
-{
-    Task_Handle uart0ReadTask;
-    Task_Handle messageTask;
-    Semaphore_Handle uart0ReadSemaphore;
-    Swi_Handle timer0Swi;
-    GateSwi_Handle callbackGate;
-} BiosStruct;
-
-
-// Structs
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

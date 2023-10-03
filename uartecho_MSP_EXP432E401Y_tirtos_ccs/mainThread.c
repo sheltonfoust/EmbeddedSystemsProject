@@ -12,8 +12,6 @@ void *mainThread(void *arg0)
         Glo.errorCounts[error] = 0;
     }
 
-    UART_Handle uart;
-    UART_Params uartParams;
 
     GPIO_init();
     UART_init();
@@ -25,7 +23,7 @@ void *mainThread(void *arg0)
     GPIO_write(4, 1);
     GPIO_write(5, 1);
 
-
+    UART_Params uartParams;
     UART_Params_init(&uartParams);
     uartParams.writeDataMode = UART_DATA_BINARY;
     uartParams.readDataMode = UART_DATA_BINARY;
@@ -54,7 +52,7 @@ void *mainThread(void *arg0)
         if (lineLength > MAXLEN)
         {
             char output[] = "\n\rOVERFLOW\n\r";
-            errorCounts[MSG_OVERFLOW]++;
+            Glo.errorCounts[MSG_OVERFLOW]++;
             UART_write(Glo.uart, &output, strlen(output));
             lineLength = 0;
             inputLine[lineLength] = 0;
@@ -70,23 +68,23 @@ void *mainThread(void *arg0)
                 // Do nothing if line is empty
             }
             else if (startsWith(inputLine, "-about"))
-                aboutParse(uart);
+                aboutParse();
             else if (startsWith(inputLine, "-error"))
-                errorParse(uart, inputLine);
+                errorParse(inputLine);
             else if (startsWith(inputLine, "-gpio"))
-                gpioParse(uart, inputLine);
+                gpioParse(inputLine);
             else if (startsWith(inputLine, "-help"))
-                helpParse(uart, inputLine);
+                helpParse(inputLine);
             else if (startsWith(inputLine, "-memr"))
-                memoryReadParse(uart, inputLine);
+                memoryReadParse(inputLine);
             else if (startsWith(inputLine, "-print"))
-                printParse(uart, inputLine);
+                printParse(inputLine);
             else // Invalid operation
             {
                 char output[MAXLEN];
                 sprintf(output, "Operation \"%s\" not valid.\n\r\n\r", inputLine);
-                UART_write(uart, &output, strlen(output));
-                errorCounts[INVALID_OPERATION]++;
+                UART_write(Glo.uart, &output, strlen(output));
+                Glo.errorCounts[INVALID_OPERATION]++;
             }
             lineLength = 0;
             inputLine[lineLength] = 0;
