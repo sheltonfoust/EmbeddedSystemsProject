@@ -7,7 +7,6 @@
 #define AUTHOR "Shelton Foust"
 #define MAXLEN 365
 #define NUMGPIO 8
-#define NUMCALLBACK 4
 
 #define MSG_OVERFLOW 0
 #define INVALID_OPERATION 1
@@ -19,8 +18,8 @@
 #include <string.h>
 #include <stdlib.h>
 
-GlobalStruct Glo;
 
+int errorCounts[NUMERROR];
 void aboutParse(UART_Handle uart);
 void errorParse(UART_Handle uart, char* input);
 void errorBase(UART_Handle uart);

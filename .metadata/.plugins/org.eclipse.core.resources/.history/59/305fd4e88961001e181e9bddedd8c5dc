@@ -9,7 +9,7 @@ void *mainThread(void *arg0)
     int error;
     for (error = 0; error < NUMERROR; error++)
     {
-        Glo.errorCounts[error] = 0;
+        errorCounts[error] = 0;
     }
 
     UART_Handle uart;
@@ -32,13 +32,15 @@ void *mainThread(void *arg0)
     uartParams.readReturnMode = UART_RETURN_FULL;
     uartParams.baudRate = 115200;
 
-    Glo.uart = UART_open(0, &uartParams); // CONFIG_UART_0, &uartParams
+    uart = UART_open(0, &uartParams); // CONFIG_UART_0, &uartParams
 
-    if (Glo.uart == NULL)
+    if (uart == NULL)
     {
         // UART_open() failed
         while (1);
     }
+
+
 
 
     char        inputChar;
@@ -48,14 +50,14 @@ void *mainThread(void *arg0)
     int         lineLength = 0;
     while (1)
     {
-        UART_read(Glo.uart, &inputChar, 1);
-        UART_write(Glo.uart, &inputChar, 1);
+        UART_read(uart, &inputChar, 1);
+        UART_write(uart, &inputChar, 1);
 
         if (lineLength > MAXLEN)
         {
             char output[] = "\n\rOVERFLOW\n\r";
             errorCounts[MSG_OVERFLOW]++;
-            UART_write(Glo.uart, &output, strlen(output));
+            UART_write(uart, &output, strlen(output));
             lineLength = 0;
             inputLine[lineLength] = 0;
         }
@@ -63,7 +65,7 @@ void *mainThread(void *arg0)
         {
             char output[MAXLEN];
             sprintf(output, "\n\r");
-            UART_write(Glo.uart, &output, strlen(output));
+            UART_write(uart, &output, strlen(output));
 
             if(strlen(inputLine) == 0)
             {
@@ -106,5 +108,6 @@ void *mainThread(void *arg0)
             inputLine[lineLength + 1] = 0;
             lineLength++;
         }
+
     }
 }

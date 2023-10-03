@@ -1310,3 +1310,23 @@ gmake[2]: Nothing to be done for 'all'.
 gmake[1]: 'uartecho_MSP_EXP432E401Y_tirtos_ccs.out' is up to date.
 
 **** Build Finished ****
+
+**** Build of configuration Debug for project tirtos_builds_MSP_EXP432E401Y_release_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+making ../src/sysbios/sysbios.aem4f ...
+gmake[1]: Nothing to be done for 'all'.
+gmake[1]: Nothing to be done for 'configPkg/linker.cmd'.
+making ../src/sysbios/sysbios.aem4f ...
+gmake[2]: Nothing to be done for 'all'.
+
+**** Build Finished ****
+
+**** Build of configuration Debug for project uartecho_MSP_EXP432E401Y_tirtos_ccs ****
+
+"C:\\ti\\ccs1240\\ccs\\utils\\bin\\gmake" -k -j 12 all -O 
+ 
+gmake[1]: 'uartecho_MSP_EXP432E401Y_tirtos_ccs.out' is up to date.
+
+**** Build Finished ****

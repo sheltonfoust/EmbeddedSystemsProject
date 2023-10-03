@@ -409,36 +409,19 @@ typedef struct _callback
 {
     int index;
     int count;
-    bool hwi_flag;
+    bool HWI_flag;
     char payload[MAXLEN];
 } Callback;
 
 
-typedef struct _GlobalStruct
+typedef struct _globals
 {
-    int timer0Period;
+    uint32_t integrityHead;
+    int Timer0Period;
     int errorCounts[NUMERROR];
     Callback callbacks[NUMCALLBACK];
-    BiosStruct bios;
-    DeviceStruct devices;
-} GlobalStruct;
 
-
-typedef struct _DeviceStruct
-{
-    UART_Handle uart0;
-    Timer_Handle timer0;
-} DeviceStruct;
-
-
-typedef struct _BiosStruct
-{
-    Task_Handle uart0ReadTask;
-    Task_Handle messageTask;
-    Semaphore_Handle uart0ReadSemaphore;
-    Swi_Handle timer0Swi;
-    GateSwi_Handle callbackGate;
-} BiosStruct;
+};
 
 
 // Structs
